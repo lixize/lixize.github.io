@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Teches | 问道凌虚</title>
+<meta name="keywords" content="">
+<meta name="description" content="Teches - 问道凌虚">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://www.zeyes.org/posts/tech/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="Teches">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Teches">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Teches",
+      "item": "https://www.zeyes.org/posts/tech/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+  <h1>
+    Teches
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Eclipse Neon配置Mysql
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1# 要下载的资料 MySQL Connector/J 6.0 下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip 查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/
+2# 解压文件 解压mysql-connector-java-6.0.6.zip，可得如下文件： ...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-06-15 16:13:00 +0800 CST'>2017年06月15日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>792 字</span></footer>
+  <a class="entry-link" aria-label="post link to Eclipse Neon配置Mysql" href="https://www.zeyes.org/posts/tech/eclipse-mysql/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">CodeBlocks 16.01&#43;wxWidgets 3.03配置
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1# 下载CodeBlocks 16.01和wxWidgets 3.0.3 CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/ wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/
+最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-06-07 01:35:00 +0800 CST'>2017年06月07日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1897 字</span></footer>
+  <a class="entry-link" aria-label="post link to CodeBlocks 16.01&#43;wxWidgets 3.03配置" href="https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1# 给root用户设置密码 1 2 sudo passwd root sudo apt-get install numlockx 2# 使用命令行登录root 1 2 su - nautilus 这样弹出来的文件管理器就有root权限了(当然只是临时的)，为了方便改文件
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-06-04 12:06:00 +0800 CST'>2017年06月04日</span>&nbsp;·&nbsp;<span>1 分钟</span>&nbsp;·&nbsp;<span>390 字</span></footer>
+  <a class="entry-link" aria-label="post link to Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘" href="https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">使用OpenVPN对校园网内网穿透
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。 #00 前言 最近对穿透学校的内网有需求，于是决定搭建环境。 网上的教程大多都是客户端访问服务器的内网， 但这个教程是，穿透客户端所在内网，由服务器访问客户端的内网。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2017-04-22 21:54:00 +0800 CST'>2017年04月22日</span>&nbsp;·&nbsp;<span>5 分钟</span>&nbsp;·&nbsp;<span>2466 字</span></footer>
+  <a class="entry-link" aria-label="post link to 使用OpenVPN对校园网内网穿透" href="https://www.zeyes.org/posts/tech/openvpn-nat/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">wxWidgets学习 - wxStaticText类
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>wxStaticText类 1 #include &lt;wx/stattext.h&gt; 静态文本控件，显示一行或者多行只读文本。 wxStaticText控件支持三种典型的文本对齐。
+样式(Styles) 这个类支持以下样式：
+wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。 wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。 公开成员函数（Public Member Functions) wxStaticText() 默认构造函数
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2016-12-14 23:59:00 +0800 CST'>2016年12月14日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>921 字</span></footer>
+  <a class="entry-link" aria-label="post link to wxWidgets学习 - wxStaticText类" href="https://www.zeyes.org/posts/tech/wx-static-text-learn/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ubuntu 16.04 安装CodeBlocks
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。
+在Ubuntu 16.04下就比较简单了。
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2016-10-14 23:46:00 +0800 CST'>2016年10月14日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>943 字</span></footer>
+  <a class="entry-link" aria-label="post link to Ubuntu 16.04 安装CodeBlocks" href="https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">HDU 1004 Let the Balloon Rise
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Let the Balloon Rise Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others) Total Submission(s): 87994 Accepted Submission(s): 33308
+Problem Description Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges’ favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result.
+This year, they decide to leave this lovely job to you.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-07-06 20:50:19 +0800 CST'>2015年07月06日</span>&nbsp;·&nbsp;<span>1 分钟</span>&nbsp;·&nbsp;<span>410 字</span></footer>
+  <a class="entry-link" aria-label="post link to HDU 1004 Let the Balloon Rise" href="https://www.zeyes.org/posts/tech/hdu-1004/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">HDU 1003 Max Sum
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Max Sum Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others) Total Submission(s): 173855 Accepted Submission(s): 40493
+Problem Description Given a sequence a[1],a[2],a[3]……a[n], your job is to calculate the max sum of a sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 &#43; (-1) &#43; 5 &#43; 4 = 14.
+Input The first line of the input contains an integer T(1&lt;=T&lt;=20) which means the number of test cases. Then T lines follow, each line starts with a number N(1&lt;=N&lt;=100000), then N integers followed(all the integers are between -1000 and 1000).
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-07-05 20:45:38 +0800 CST'>2015年07月05日</span>&nbsp;·&nbsp;<span>1 分钟</span>&nbsp;·&nbsp;<span>480 字</span></footer>
+  <a class="entry-link" aria-label="post link to HDU 1003 Max Sum" href="https://www.zeyes.org/posts/tech/hdu-1003/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">HDU 1002 A &#43; B Problem II
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>A &#43; B Problem II Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others) Total Submission(s): 257918 Accepted Submission(s): 49865
+Problem Description I have a very simple problem for you. Given two integers A and B, your job is to calculate the Sum of A &#43; B.
+Input The first line of the input contains an integer T(1&lt;=T&lt;=20) which means the number of test cases. Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers are very large, that means you should not process them by using 32-bit integer. You may assume the length of each integer will not exceed 1000.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-07-04 20:39:18 +0800 CST'>2015年07月04日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>683 字</span></footer>
+  <a class="entry-link" aria-label="post link to HDU 1002 A &#43; B Problem II" href="https://www.zeyes.org/posts/tech/hdu-1002/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">归并排序(Merge Sort)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 归并排序是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（当然这个是比较业余的说法，如果想得到准确答案，问度娘。）归并排序的时间复杂度为O(nlgn)，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。
+算法原理 1.二路归并排序是将两个已经有序的数组重新组合到一个有序的数组。 递归部分： 2.因为一个随机的数组分成两个数组（假设A和B）之后一般（A和B）不会是有序的，所以递归求解。 3.直到最后一个元素（一个元素是不用排序的），一个元素看成一个数组是有序的，所以递归返回。 非递归部分： 4.申请两个临时数组，用来存放分开的两组数据。 5.两个临时数组比较，哪边小就从哪边抽出元素放回原数组。（这里指的是升序排序） 6.直到没有。（为了少写代码，设置两个无穷大的数在数组的最后，效果自己模拟下看看）
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-06-24 20:33:32 +0800 CST'>2015年06月24日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>974 字</span></footer>
+  <a class="entry-link" aria-label="post link to 归并排序(Merge Sort)" href="https://www.zeyes.org/posts/tech/c-merge-sort-learn/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://www.zeyes.org/posts/tech/">
+      «&nbsp;上一页&nbsp;
+    </a>
+    <a class="next" href="https://www.zeyes.org/posts/tech/page/3/">下一页&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

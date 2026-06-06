@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>算法学习 on 问道凌虚</title>
+    <link>https://www.zeyes.org/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 算法学习 on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Mon, 30 Apr 2018 00:15:57 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CodeBlocks 16.01&#43;wxWidgets 3.03配置</title>
+      <link>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</link>
+      <pubDate>Wed, 07 Jun 2017 01:35:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
+      <description>&lt;h3 id=&#34;1-下载codeblocks-1601和wxwidgets-303&#34;&gt;1# 下载CodeBlocks 16.01和wxWidgets 3.0.3&lt;/h3&gt;
+&lt;p&gt;CodeBlocks 16.01 下载地址：&lt;a href=&#34;http://www.codeblocks.org/downloads/&#34;&gt;http://www.codeblocks.org/downloads/&lt;/a&gt;
+wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/downloads/&#34;&gt;https://www.wxwidgets.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1004 Let the Balloon Rise</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1004/</link>
+      <pubDate>Mon, 06 Jul 2015 20:50:19 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1004/</guid>
+      <description>&lt;h2 id=&#34;let-the-balloon-rise&#34;&gt;Let the Balloon Rise&lt;/h2&gt;
+&lt;p&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges&amp;rsquo; favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result.&lt;/p&gt;
+&lt;p&gt;This year, they decide to leave this lovely job to you.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1003 Max Sum</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1003/</link>
+      <pubDate>Sun, 05 Jul 2015 20:45:38 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1003/</guid>
+      <description>&lt;h2 id=&#34;max-sum&#34;&gt;Max Sum&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;Given a sequence a[1],a[2],a[3]&amp;hellip;&amp;hellip;a[n], your job is to calculate the max sum of a sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 + (-1) + 5 + 4 = 14.&lt;/p&gt;
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input contains an integer T(1&amp;lt;=T&amp;lt;=20) which means the number of test cases. Then T lines follow, each line starts with a number N(1&amp;lt;=N&amp;lt;=100000), then N integers followed(all the integers are between -1000 and 1000).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1002 A &#43; B Problem II</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1002/</link>
+      <pubDate>Sat, 04 Jul 2015 20:39:18 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1002/</guid>
+      <description>&lt;h2 id=&#34;a--b-problem-ii&#34;&gt;A + B Problem II&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;I have a very simple problem for you. Given two integers A and B, your job is to calculate the Sum of A + B.&lt;/p&gt;
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input contains an integer T(1&amp;lt;=T&amp;lt;=20) which means the number of test cases. Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers are very large, that means you should not process them by using 32-bit integer. You may assume the length of each integer will not exceed 1000.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>归并排序(Merge Sort)</title>
+      <link>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</link>
+      <pubDate>Wed, 24 Jun 2015 20:33:32 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;归并排序&lt;/strong&gt;是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（&lt;em&gt;当然这个是比较业余的说法，如果想得到准确答案，问度娘。&lt;/em&gt;）归并排序的时间复杂度为&lt;strong&gt;O(nlgn)&lt;/strong&gt;，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;算法原理&#34;&gt;算法原理&lt;/h3&gt;
+&lt;p&gt;1.二路归并排序是将两个已经有序的数组重新组合到一个有序的数组。
+递归部分：
+2.因为一个随机的数组分成两个数组（假设A和B）之后一般（A和B）不会是有序的，所以递归求解。
+3.直到最后一个元素（一个元素是不用排序的），一个元素看成一个数组是有序的，所以递归返回。
+非递归部分：
+4.申请两个临时数组，用来存放分开的两组数据。
+5.两个临时数组比较，哪边小就从哪边抽出元素放回原数组。（这里指的是升序排序）
+6.直到没有。（为了少写代码，设置两个无穷大的数在数组的最后，效果自己模拟下看看）&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>POJ 1804 Brainman</title>
+      <link>https://www.zeyes.org/posts/tech/poj-1804/</link>
+      <pubDate>Tue, 23 Jun 2015 20:11:42 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/poj-1804/</guid>
+      <description>&lt;h1 id=&#34;brainman&#34;&gt;Brainman&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 1000MS Memory Limit: 30000K
+Total Submissions: 8755 Accepted: 4723&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;h4 id=&#34;background&#34;&gt;Background&lt;/h4&gt;
+&lt;p&gt;Raymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spilled all over the floor in an instant just by glancing at them. And he can even count Poker cards. Charlie would love to be able to do cool things like that, too. He wants to beat his brother in a similar task.&lt;/p&gt;
+&lt;h4 id=&#34;problem&#34;&gt;Problem&lt;/h4&gt;
+&lt;p&gt;Here&amp;rsquo;s what Charlie thinks of. Imagine you get a sequence of N numbers. The goal is to move the numbers around so that at the end the sequence is ordered. The only operation allowed is to swap two adjacent numbers. Let us try an example:
+Start with: 2 8 0 3
+swap (2 8) 8 2 0 3
+swap (2 0) 8 0 2 3
+swap (2 3) 8 0 3 2
+swap (8 0) 0 8 3 2
+swap (8 3) 0 3 8 2
+swap (8 2) 0 3 2 8
+swap (3 2) 0 2 3 8
+swap (3 8) 0 2 8 3
+swap (8 3) 0 2 3 8&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>选择排序（Selection Sort）</title>
+      <link>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</link>
+      <pubDate>Sun, 21 Jun 2015 20:03:48 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</guid>
+      <description>&lt;strong&gt;选择排序&lt;/strong&gt;是经典排序的一种，最差的时间复杂度为&lt;strong&gt;O(n^2&lt;/strong&gt;)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。</description>
+    </item>
+    <item>
+      <title>插入排序的C语言实现</title>
+      <link>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</link>
+      <pubDate>Sat, 20 Jun 2015 15:08:08 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</guid>
+      <description>&lt;strong&gt;插入排序&lt;/strong&gt;，稳定排序的一种,&lt;strong&gt;平均时间复杂度为O(n^2)&lt;/strong&gt;,它的代码量很小，对于处理小数据的排序还是可以的。
+排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。</description>
+    </item>
+    <item>
+      <title>Kruskal算法的C语言实现（并查集版）</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-kruskal/</link>
+      <pubDate>Sun, 23 Feb 2014 00:07:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-kruskal/</guid>
+      <description>Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。</description>
+    </item>
+    <item>
+      <title>Prim算法的C语言实现</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-prim/</link>
+      <pubDate>Sat, 01 Feb 2014 14:54:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-prim/</guid>
+      <description>普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</description>
+    </item>
+    <item>
+      <title>Dijkstra算法的C语言实现</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-dijkstra/</link>
+      <pubDate>Sun, 26 Jan 2014 17:00:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-dijkstra/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

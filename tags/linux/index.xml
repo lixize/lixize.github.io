@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on 问道凌虚</title>
+    <link>https://www.zeyes.org/tags/linux/</link>
+    <description>Recent content in Linux on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Sun, 29 Apr 2018 22:44:05 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu 16.04 菜单栏消失的解决办法</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</link>
+      <pubDate>Sun, 17 Sep 2017 09:33:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</guid>
+      <description>&lt;p&gt;今天无缘无故，ubuntu的菜单栏就消失了。找了以下终于找到了解决办法。&lt;/p&gt;
+&lt;p&gt;打开命令行窗口，输入以下语句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf reset -f /org/compiz/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;setsid unity
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后，菜单栏就回来了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ubuntu中Codeblock运行中文乱码解决方法</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</link>
+      <pubDate>Sat, 16 Sep 2017 19:09:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</guid>
+      <description>&lt;h3 id=&#34;中文乱码解决方案&#34;&gt;中文乱码解决方案&lt;/h3&gt;
+&lt;p&gt;“设置”菜单下选“环境设置”：&lt;/p&gt;
+&lt;p&gt;“常规设置”，最下面&amp;quot;启动控制台程序的终端”，选择gnome-terminal -t $TITLE -x
+原来是xterm -T $TITLE –e&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</link>
+      <pubDate>Fri, 15 Sep 2017 13:37:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</guid>
+      <description>&lt;p&gt;最近开机总是遇到一段提示，内容大概是这样：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下载额外数据文件失败
+以下软件包要求安装后下载附加数据，但其数据无法下载或无法处理。
+ttf-mscorefonts-installer
+稍后系统将自动重试下载，您也可以手工立即重试。执行此命令需要有活动的网络连接。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘</title>
+      <link>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</link>
+      <pubDate>Sun, 04 Jun 2017 12:06:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</guid>
+      <description>&lt;h3 id=&#34;1-给root用户设置密码&#34;&gt;1# 给root用户设置密码&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo passwd root
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install numlockx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-使用命令行登录root&#34;&gt;2# 使用命令行登录root&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nautilus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样弹出来的文件管理器就有root权限了(当然只是临时的)，为了方便改文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用OpenVPN对校园网内网穿透</title>
+      <link>https://www.zeyes.org/posts/tech/openvpn-nat/</link>
+      <pubDate>Sat, 22 Apr 2017 21:54:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/openvpn-nat/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。
+&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;00-前言&#34;&gt;#00 前言&lt;/h3&gt;
+&lt;p&gt;最近对穿透学校的内网有需求，于是决定搭建环境。
+网上的教程大多都是客户端访问服务器的内网，
+但这个教程是，穿透客户端所在内网，由服务器访问客户端的内网。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 16.04 安装CodeBlocks</title>
+      <link>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</link>
+      <pubDate>Fri, 14 Oct 2016 23:46:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</guid>
+      <description>&lt;p&gt;CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。&lt;/p&gt;
+&lt;p&gt;在Ubuntu 16.04下就比较简单了。&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>wxWidgets学习 - wxStaticText类 | 问道凌虚</title>
+<meta name="keywords" content="框架学习, 学习, wxWidgets">
+<meta name="description" content="wxStaticText类
+
+
+1
+
+
+#include &lt;wx/stattext.h&gt;
+
+
+静态文本控件，显示一行或者多行只读文本。
+wxStaticText控件支持三种典型的文本对齐。
+样式(Styles)
+这个类支持以下样式：
+
+wxALIGN_LEFT： 文本向左对齐。
+wxALIGN_RIGHT： 文本向右对齐。
+wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。
+wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。
+wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。
+wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。
+wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。
+
+公开成员函数（Public Member Functions)
+wxStaticText()
+默认构造函数">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/wx-static-text-learn/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/wx-static-text-learn/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/wx-static-text-learn/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="wxWidgets学习 - wxStaticText类">
+  <meta property="og:description" content="wxStaticText类 1 #include &lt;wx/stattext.h&gt; 静态文本控件，显示一行或者多行只读文本。 wxStaticText控件支持三种典型的文本对齐。
+样式(Styles) 这个类支持以下样式：
+wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。 wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。 公开成员函数（Public Member Functions) wxStaticText() 默认构造函数">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2016-12-14T23:59:00+08:00">
+    <meta property="article:modified_time" content="2018-04-29T21:05:31+08:00">
+    <meta property="article:tag" content="框架学习">
+    <meta property="article:tag" content="学习">
+    <meta property="article:tag" content="WxWidgets">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="wxWidgets学习 - wxStaticText类">
+  <meta name="twitter:description" content="wxStaticText类 1 #include &lt;wx/stattext.h&gt; 静态文本控件，显示一行或者多行只读文本。 wxStaticText控件支持三种典型的文本对齐。
+样式(Styles) 这个类支持以下样式：
+wxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。 wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。 公开成员函数（Public Member Functions) wxStaticText() 默认构造函数">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://www.zeyes.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "wxWidgets学习 - wxStaticText类",
+      "item": "https://www.zeyes.org/posts/tech/wx-static-text-learn/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "wxWidgets学习 - wxStaticText类",
+  "name": "wxWidgets学习 - wxStaticText类",
+  "description": "wxStaticText类 1 #include \u0026lt;wx/stattext.h\u0026gt; 静态文本控件，显示一行或者多行只读文本。 wxStaticText控件支持三种典型的文本对齐。\n样式(Styles) 这个类支持以下样式：\nwxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。 wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。 公开成员函数（Public Member Functions) wxStaticText() 默认构造函数\n",
+  "keywords": [
+    "框架学习", "学习", "wxWidgets"
+  ],
+  "articleBody": "wxStaticText类 1 #include 静态文本控件，显示一行或者多行只读文本。 wxStaticText控件支持三种典型的文本对齐。\n样式(Styles) 这个类支持以下样式：\nwxALIGN_LEFT： 文本向左对齐。 wxALIGN_RIGHT： 文本向右对齐。 wxALIGN_CENTRE_HORIZONTAL： 文本水平居中。 wxST_NO_AUTORESIZE： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。 wxST_ELLIPSIZE_START： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_MIDDLE： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。 wxST_ELLIPSIZE_END： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。 公开成员函数（Public Member Functions) wxStaticText() 默认构造函数\nbool Create (wxWindow *parent, wxWindowID id, const wxString \u0026label, const wxPoint \u0026pos=wxDefaultPosition, const wxSize \u0026size=wxDefaultSize, long style=0, const wxString \u0026name=wxStaticTextNameStr) 构造函数，创建和显示文本控件。\nbool Create (wxWindow *parent, wxWindowID id, const wxString \u0026label, const wxPoint \u0026pos=wxDefaultPosition, const wxSize \u0026size=wxDefaultSize, long style=0, const wxString \u0026name=wxStaticTextNameStr) 生成功能，用于两步骤构建。\nbool IsEllipsized () const 如果此控件的窗口样式包含wxST_ELLIPSIZE_START，wxST_ELLIPSIZE_MIDDLE或wxST_ELLIPSIZE_END样式之一，则返回true。\nvoid Wrap (int width) 这个函数折叠控件标签内容，以使其每条线最多宽度为像素宽（如果可能的话，这些线在字边界处断开，因此如果单词太长，则可能不是这样）。\nExample 1 2 3 4 5 6 7 8 9 10 11 12 13 14 // 两步创建模式 wxStaticText* StaticText1 = new wxStaticText(); StaticText1-\u003eCreate(this, STATIC_TEXT_1, \"这是一个测试\", wxDefaultPosition, wxDefaultSize); // 单步步创建模式 wxStaticText* StaticText2 = new wxStaticText(this, STATIC_TEXT_2, \"test\", wxDefaultPosition, wxDefaultSize); StaticText1-\u003eSetLabel(\"Abc-test\"); // 设置标签 wxString str = StaticText1-\u003eGetLabelText(); // 获取标签内容 StaticText1-\u003eSetForegroundColour(*wxRED); // 设置文本颜色 StaticText1-\u003eSetBackgroundColour(*wxWHITE); // 设置背景颜色 wxSize tsize = StaticText1-\u003eGetSizeFromTextSize(100, 50); // 获取文本最佳大小 StaticText2-\u003eSetLabelText(str); StaticText2-\u003eSetSize(tsize); // 设置文本框大小 ",
+  "wordCount" : "921",
+  "inLanguage": "zh-cn",
+  "datePublished": "2016-12-14T23:59:00+08:00",
+  "dateModified": "2018-04-29T21:05:31+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.zeyes.org/posts/tech/wx-static-text-learn/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "问道凌虚",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zeyes.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/tech/">Teches</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      wxWidgets学习 - wxStaticText类
+    </h1>
+    <div class="post-meta">
+
+<span title='2016-12-14 23:59:00 +0800 CST'>2016年12月14日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>921 字</span>
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#wxstatictext%e7%b1%bb" aria-label="wxStaticText类">wxStaticText类</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%a0%b7%e5%bc%8fstyles" aria-label="样式(Styles)">样式(Styles)</a></li>
+                    <li>
+                        <a href="#%e5%85%ac%e5%bc%80%e6%88%90%e5%91%98%e5%87%bd%e6%95%b0public-member-functions" aria-label="公开成员函数（Public Member Functions)">公开成员函数（Public Member Functions)</a></li>
+                    <li>
+                        <a href="#example" aria-label="Example">Example</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    
+    document.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+    
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        if (elements.length > 0) {
+            
+            activeElement = elements[0];
+            const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+            document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+        }
+    
+        
+        const topLink = document.getElementById('top-link');
+        if (topLink) {
+            topLink.addEventListener('click', (event) => {
+                
+                event.preventDefault();
+    
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    }, false);
+    
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+    
+    window.addEventListener('scroll', () => {
+        
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+        
+        if (scrollPosition === 0) {
+            return;
+        }
+    
+        
+        if (elements && elements.length > 0) {
+            
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - scrollPosition) > 0 && 
+                    (getOffsetTop(element) - scrollPosition) < window.innerHeight / 2) {
+                    return element;
+                }
+            }) || activeElement;
+    
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                const tocLink = document.querySelector(`.inner ul li a[href="#${id}"]`);
+                if (element === activeElement){
+                    tocLink.classList.add('active');
+    
+                    
+                    const tocContainer = document.querySelector('.toc .inner');
+                    const linkOffsetTop = tocLink.offsetTop;
+                    const containerHeight = tocContainer.clientHeight;
+                    const linkHeight = tocLink.clientHeight;
+    
+                    
+                    const scrollPosition = linkOffsetTop - (containerHeight / 2) + (linkHeight / 2);
+                    tocContainer.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+                } else {
+                    tocLink.classList.remove('active');
+                }
+            });
+        }
+    }, false);
+    
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+    
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+    
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+    
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+    
+</script>
+
+  <div class="post-content md-content"><h2 id="wxstatictext类">wxStaticText类<a hidden class="anchor" aria-hidden="true" href="#wxstatictext类">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;wx/stattext.h&gt;</span><span class="cp">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>静态文本控件，显示一行或者多行只读文本。
+wxStaticText控件支持三种典型的文本对齐。</p>
+<h3 id="样式styles">样式(Styles)<a hidden class="anchor" aria-hidden="true" href="#样式styles">#</a></h3>
+<p>这个类支持以下样式：</p>
+<ul>
+<li><strong>wxALIGN_LEFT</strong>： 文本向左对齐。</li>
+<li><strong>wxALIGN_RIGHT</strong>： 文本向右对齐。</li>
+<li><strong>wxALIGN_CENTRE_HORIZONTAL</strong>： 文本水平居中。</li>
+<li><strong>wxST_NO_AUTORESIZE</strong>： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。</li>
+<li><strong>wxST_ELLIPSIZE_START</strong>： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。</li>
+<li><strong>wxST_ELLIPSIZE_MIDDLE</strong>： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。</li>
+<li><strong>wxST_ELLIPSIZE_END</strong>： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。</li>
+</ul>
+<h3 id="公开成员函数public-member-functions">公开成员函数（Public Member Functions)<a hidden class="anchor" aria-hidden="true" href="#公开成员函数public-member-functions">#</a></h3>
+<p>wxStaticText()
+默认构造函数</p>
+<p>bool Create (wxWindow *parent, wxWindowID id, const wxString &amp;label, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxStaticTextNameStr)
+构造函数，创建和显示文本控件。</p>
+<p>bool Create (wxWindow *parent, wxWindowID id, const wxString &amp;label, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxStaticTextNameStr)
+生成功能，用于两步骤构建。</p>
+<p>bool IsEllipsized () const
+如果此控件的窗口样式包含wxST_ELLIPSIZE_START，wxST_ELLIPSIZE_MIDDLE或wxST_ELLIPSIZE_END样式之一，则返回true。</p>
+<p>void Wrap (int width)
+这个函数折叠控件标签内容，以使其每条线最多宽度为像素宽（如果可能的话，这些线在字边界处断开，因此如果单词太长，则可能不是这样）。</p>
+<h3 id="example">Example<a hidden class="anchor" aria-hidden="true" href="#example">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// 两步创建模式
+</span></span></span><span class="line"><span class="cl"><span class="n">wxStaticText</span><span class="o">*</span> <span class="n">StaticText1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">wxStaticText</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">StaticText1</span><span class="o">-&gt;</span><span class="n">Create</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">STATIC_TEXT_1</span><span class="p">,</span> <span class="s">&#34;这是一个测试&#34;</span><span class="p">,</span> <span class="n">wxDefaultPosition</span><span class="p">,</span> <span class="n">wxDefaultSize</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 单步步创建模式
+</span></span></span><span class="line"><span class="cl"><span class="n">wxStaticText</span><span class="o">*</span> <span class="n">StaticText2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">wxStaticText</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">STATIC_TEXT_2</span><span class="p">,</span> <span class="s">&#34;test&#34;</span><span class="p">,</span> <span class="n">wxDefaultPosition</span><span class="p">,</span> <span class="n">wxDefaultSize</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">StaticText1</span><span class="o">-&gt;</span><span class="n">SetLabel</span><span class="p">(</span><span class="s">&#34;Abc-test&#34;</span><span class="p">);</span>  <span class="c1">// 设置标签
+</span></span></span><span class="line"><span class="cl"><span class="n">wxString</span> <span class="n">str</span> <span class="o">=</span> <span class="n">StaticText1</span><span class="o">-&gt;</span><span class="n">GetLabelText</span><span class="p">();</span> <span class="c1">// 获取标签内容
+</span></span></span><span class="line"><span class="cl"><span class="n">StaticText1</span><span class="o">-&gt;</span><span class="n">SetForegroundColour</span><span class="p">(</span><span class="o">*</span><span class="n">wxRED</span><span class="p">);</span>   <span class="c1">// 设置文本颜色
+</span></span></span><span class="line"><span class="cl"><span class="n">StaticText1</span><span class="o">-&gt;</span><span class="n">SetBackgroundColour</span><span class="p">(</span><span class="o">*</span><span class="n">wxWHITE</span><span class="p">);</span> <span class="c1">// 设置背景颜色
+</span></span></span><span class="line"><span class="cl"><span class="n">wxSize</span> <span class="n">tsize</span> <span class="o">=</span> <span class="n">StaticText1</span><span class="o">-&gt;</span><span class="n">GetSizeFromTextSize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// 获取文本最佳大小
+</span></span></span><span class="line"><span class="cl"><span class="n">StaticText2</span><span class="o">-&gt;</span><span class="n">SetLabelText</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">StaticText2</span><span class="o">-&gt;</span><span class="n">SetSize</span><span class="p">(</span><span class="n">tsize</span><span class="p">);</span> <span class="c1">// 设置文本框大小
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.zeyes.org/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/">框架学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/wxwidgets/">WxWidgets</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/openvpn-nat/">
+    <span class="title">« 上一页</span>
+    <span>使用OpenVPN对校园网内网穿透</span>
+  </a>
+  <a class="next" href="https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/">
+    <span class="title">下一页 »</span>
+    <span>Ubuntu 16.04 安装CodeBlocks</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>折腾 on 问道凌虚</title>
+    <link>https://www.zeyes.org/tags/%E6%8A%98%E8%85%BE/</link>
+    <description>Recent content in 折腾 on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Sun, 29 Apr 2018 22:44:05 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>D客户端(中兴802.1X) For OpenWrt</title>
+      <link>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</link>
+      <pubDate>Sun, 01 Oct 2017 11:59:58 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;学校用的是中兴802.1X认证，只有通过认证的客户端才能上内网和外网。外网登录天翼校园网才能上网。而官方的中兴802.1X客户端，只能运行在Window平台上，并且不能共享WIFI。因此下决心开发了个OpenWrt版的中兴802.1X客户端，这个客户端不同的是专门为我校写的，所以还带了登录天翼校园网的功能。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 16.04 菜单栏消失的解决办法</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</link>
+      <pubDate>Sun, 17 Sep 2017 09:33:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</guid>
+      <description>&lt;p&gt;今天无缘无故，ubuntu的菜单栏就消失了。找了以下终于找到了解决办法。&lt;/p&gt;
+&lt;p&gt;打开命令行窗口，输入以下语句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf reset -f /org/compiz/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;setsid unity
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后，菜单栏就回来了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</link>
+      <pubDate>Fri, 15 Sep 2017 13:37:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</guid>
+      <description>&lt;p&gt;最近开机总是遇到一段提示，内容大概是这样：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下载额外数据文件失败
+以下软件包要求安装后下载附加数据，但其数据无法下载或无法处理。
+ttf-mscorefonts-installer
+稍后系统将自动重试下载，您也可以手工立即重试。执行此命令需要有活动的网络连接。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘</title>
+      <link>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</link>
+      <pubDate>Sun, 04 Jun 2017 12:06:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</guid>
+      <description>&lt;h3 id=&#34;1-给root用户设置密码&#34;&gt;1# 给root用户设置密码&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo passwd root
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install numlockx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-使用命令行登录root&#34;&gt;2# 使用命令行登录root&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nautilus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样弹出来的文件管理器就有root权限了(当然只是临时的)，为了方便改文件&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

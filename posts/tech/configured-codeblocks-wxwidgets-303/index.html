@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>CodeBlocks 16.01&#43;wxWidgets 3.03配置 | 问道凌虚</title>
+<meta name="keywords" content="算法学习, 算法, C语言">
+<meta name="description" content="1# 下载CodeBlocks 16.01和wxWidgets 3.0.3
+CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/
+wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/
+最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="CodeBlocks 16.01&#43;wxWidgets 3.03配置">
+  <meta property="og:description" content="1# 下载CodeBlocks 16.01和wxWidgets 3.0.3 CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/ wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/
+最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2017-06-07T01:35:00+08:00">
+    <meta property="article:modified_time" content="2018-04-29T22:53:49+08:00">
+    <meta property="article:tag" content="算法学习">
+    <meta property="article:tag" content="算法">
+    <meta property="article:tag" content="C语言">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CodeBlocks 16.01&#43;wxWidgets 3.03配置">
+  <meta name="twitter:description" content="1# 下载CodeBlocks 16.01和wxWidgets 3.0.3 CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/ wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/
+最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://www.zeyes.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "CodeBlocks 16.01+wxWidgets 3.03配置",
+      "item": "https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CodeBlocks 16.01+wxWidgets 3.03配置",
+  "name": "CodeBlocks 16.01\u002bwxWidgets 3.03配置",
+  "description": "1# 下载CodeBlocks 16.01和wxWidgets 3.0.3 CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/ wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/\n最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。\n",
+  "keywords": [
+    "算法学习", "算法", "C语言"
+  ],
+  "articleBody": "1# 下载CodeBlocks 16.01和wxWidgets 3.0.3 CodeBlocks 16.01 下载地址：http://www.codeblocks.org/downloads/ wxWidgets 3.03 下载地址：https://www.wxwidgets.org/downloads/\n最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。\n下载后得到两个文件：\ncodeblocks-16.01mingw-setup.exe wxWidgets-3.0.3.zip 2# 安装CodeBlocks 16.01和解压wxWidgets 3.0.3 将CodeBlocks安装到F:\\Program Files (x86)\\CodeBlocks 将wxWidgets解压到F:\\wxWidgets-3.0.3目录下 PS：其实这个随意，只要安装到找得到的地方就好。\n3# 设置环境变量 在编译wxWidgets之前首先要设置一下MinGw环境变量，CodeBlocks 16.01中有自带gcc 4.9.2 这个版本的编译器。比如我的CodeBlocks装在F:\\Program Files (x86)\\CodeBlocks这个目录下，那么将;F:\\Program Files (x86)\\CodeBlocks\\MinGW\\bin;加入Path路径中，保存。注意：环境变量每个路径以分号分隔的，如果前面路径结尾已经有了分号，那么只需要一个分号。\n在命令行下输入gcc –v有如下信息：\n1 2 3 4 5 6 7 8 9 C:\\Users\\Administrator\u003egcc -v Using built-in specs. COLLECT_GCC=gcc COLLECT_LTO_WRAPPER=F:/Program\\ Files\\ (x86)/CodeBlocks/MinGW/bin/../libexec/gcc /mingw32/4.9.2/lto-wrapper.exe Target: mingw32 … Thread model: posix gcc version 4.9.2 (tdm-1) 看最末尾那行gcc version是4.9.2那么就是成功配置了。wxWidgets对编译器的版本也有要求的，如果是新手，建议使用CodeBlocks自带的编译器。\n4# 编译wxWidgets 3.0.3 在命令进入wxWigets的build/msw文件夹，例如我的是F:\\wxWidgets-3.0.3\\build\\msw这个路径\n1 2 F: cd F:\\wxWidgets-3.0.3\\build\\msw 接下来就是make了。\n编译命令如下：\n1 2 mingw32-make -j2 -f makefile.gcc BUILD=release SHARED=0 MONOLITHIC=1 UNICODE=1 mingw32-make -j2 -f makefile.gcc BUILD=debug SHARED=0 MONOLITHIC=1 UNICODE=1 这里使用开两个线程来编译，加入参数-j2，以加快速度，第一次运行会直接提示出错，再运行同样的命令一次就不会出问题了。当然如果不加-j2，也没问题，以正常的速度编译。值得一说的是，可以开两个命令行窗口同时编译，运行上面命令。比如一个窗口编译release版本，一个窗口编译debug版本。速度也能大大加快。\n还有其他的一些参数解释如下： BUILD BUILD控制wxWidgets构建调试版本（BUILD=debug）或者是发布版本（BUILD=release）。绝大多数情况下你只需要 wxWidgets的发布版本就可以了，因为你应该不想要去调试wxWidgets自身，同时你依然可以通过链接wxWidgets的发布版本来构建你自己的程序的调试版本。\nSHARED SHARED控制wxWidgets是构建DLL（SHARED=1）还是静态库（SHARED=0）。利用构建的DLL，主程序构建时间较快，可执行文件更小。但是可执行文件加上wxWidgets DLL的总大小更大，但是不同的可执行文件可以使用同一个DLL。\nMONOLITHIC MONOLITHIC控制是构建一个单一的库（MONOLITHIC=1）还是多个组件库（MONOLITHIC=0）。使用单一构建，项目的设置 和开发会更加简单，如果你同时使用DLL构建的话，你只需要分发一个DLL文件。如果使用非单一构建（multilib），会构建出多个不同的库同时你可 以避免将整个wxWidgets的基本代码链接到主程序，就可以去掉不需要的库。同时你也必须确保你选择了正确的组件库。\nUNICODE UNICODE控制wxWidgets以及你的程序是否使用支持Unicode的宽字符串。\n5# 配置CodeBlocks 编译好了以后还有在CodeBlocks上配置一下。 在Settings--\u003eGlobal Variable Editor上Current Variable这个选项上New，输入wx。 然后设置下base、include和lib，例如我的wxWidgets安装位置是F:\\wxWidgets-3.0.3 6# 进行测试 下面是新建工程测试。 有一个事情是必须记住的，要记住编译时的参数。 上面的命令一共编译了两个版本，release和debug版，在构建项目的时候，两个都可以勾选。而且，SHARED=0代表使用静态库，Use wxWidgets DLL不勾选，MONOLITHIC=1 表示使用单一的库，wxWidgets is build as a monolithic library就要勾选，同理UNICODE=1表示支持Unicode，这样Enable unicode也要勾选。 7# 正常使用 接下来可以随意使用了。\n",
+  "wordCount" : "1897",
+  "inLanguage": "zh-cn",
+  "datePublished": "2017-06-07T01:35:00+08:00",
+  "dateModified": "2018-04-29T22:53:49+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "问道凌虚",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zeyes.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/tech/">Teches</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      CodeBlocks 16.01&#43;wxWidgets 3.03配置
+    </h1>
+    <div class="post-meta">
+
+<span title='2017-06-07 01:35:00 +0800 CST'>2017年06月07日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1897 字</span>
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#1-%e4%b8%8b%e8%bd%bdcodeblocks-1601%e5%92%8cwxwidgets-303" aria-label="1# 下载CodeBlocks 16.01和wxWidgets 3.0.3">1# 下载CodeBlocks 16.01和wxWidgets 3.0.3</a></li>
+                    <li>
+                        <a href="#2-%e5%ae%89%e8%a3%85codeblocks-1601%e5%92%8c%e8%a7%a3%e5%8e%8bwxwidgets-303" aria-label="2# 安装CodeBlocks 16.01和解压wxWidgets 3.0.3">2# 安装CodeBlocks 16.01和解压wxWidgets 3.0.3</a></li>
+                    <li>
+                        <a href="#3-%e8%ae%be%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" aria-label="3# 设置环境变量">3# 设置环境变量</a></li>
+                    <li>
+                        <a href="#4-%e7%bc%96%e8%af%91wxwidgets-303" aria-label="4# 编译wxWidgets 3.0.3">4# 编译wxWidgets 3.0.3</a></li>
+                    <li>
+                        <a href="#5-%e9%85%8d%e7%bd%aecodeblocks" aria-label="5# 配置CodeBlocks">5# 配置CodeBlocks</a></li>
+                    <li>
+                        <a href="#6-%e8%bf%9b%e8%a1%8c%e6%b5%8b%e8%af%95" aria-label="6# 进行测试">6# 进行测试</a></li>
+                    <li>
+                        <a href="#7-%e6%ad%a3%e5%b8%b8%e4%bd%bf%e7%94%a8" aria-label="7# 正常使用">7# 正常使用</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    
+    document.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+    
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        if (elements.length > 0) {
+            
+            activeElement = elements[0];
+            const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+            document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+        }
+    
+        
+        const topLink = document.getElementById('top-link');
+        if (topLink) {
+            topLink.addEventListener('click', (event) => {
+                
+                event.preventDefault();
+    
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    }, false);
+    
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+    
+    window.addEventListener('scroll', () => {
+        
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+        
+        if (scrollPosition === 0) {
+            return;
+        }
+    
+        
+        if (elements && elements.length > 0) {
+            
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - scrollPosition) > 0 && 
+                    (getOffsetTop(element) - scrollPosition) < window.innerHeight / 2) {
+                    return element;
+                }
+            }) || activeElement;
+    
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                const tocLink = document.querySelector(`.inner ul li a[href="#${id}"]`);
+                if (element === activeElement){
+                    tocLink.classList.add('active');
+    
+                    
+                    const tocContainer = document.querySelector('.toc .inner');
+                    const linkOffsetTop = tocLink.offsetTop;
+                    const containerHeight = tocContainer.clientHeight;
+                    const linkHeight = tocLink.clientHeight;
+    
+                    
+                    const scrollPosition = linkOffsetTop - (containerHeight / 2) + (linkHeight / 2);
+                    tocContainer.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+                } else {
+                    tocLink.classList.remove('active');
+                }
+            });
+        }
+    }, false);
+    
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+    
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+    
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+    
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+    
+</script>
+
+  <div class="post-content md-content"><h3 id="1-下载codeblocks-1601和wxwidgets-303">1# 下载CodeBlocks 16.01和wxWidgets 3.0.3<a hidden class="anchor" aria-hidden="true" href="#1-下载codeblocks-1601和wxwidgets-303">#</a></h3>
+<p>CodeBlocks 16.01 下载地址：<a href="http://www.codeblocks.org/downloads/">http://www.codeblocks.org/downloads/</a>
+wxWidgets 3.03 下载地址：<a href="https://www.wxwidgets.org/downloads/">https://www.wxwidgets.org/downloads/</a></p>
+<p>最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。</p>
+<p>下载后得到两个文件：</p>
+<ul>
+<li>codeblocks-16.01mingw-setup.exe</li>
+<li>wxWidgets-3.0.3.zip</li>
+</ul>
+<h3 id="2-安装codeblocks-1601和解压wxwidgets-303">2# 安装CodeBlocks 16.01和解压wxWidgets 3.0.3<a hidden class="anchor" aria-hidden="true" href="#2-安装codeblocks-1601和解压wxwidgets-303">#</a></h3>
+<p>将CodeBlocks安装到F:\Program Files (x86)\CodeBlocks
+将wxWidgets解压到F:\wxWidgets-3.0.3目录下
+<em>PS：其实这个随意，只要安装到找得到的地方就好。</em></p>
+<h3 id="3-设置环境变量">3# 设置环境变量<a hidden class="anchor" aria-hidden="true" href="#3-设置环境变量">#</a></h3>
+<p>在编译wxWidgets之前首先要设置一下MinGw环境变量，CodeBlocks 16.01中有自带gcc 4.9.2 这个版本的编译器。比如我的CodeBlocks装在F:\Program Files (x86)\CodeBlocks这个目录下，那么将<code>;F:\Program Files (x86)\CodeBlocks\MinGW\bin;</code>加入Path路径中，保存。<em>注意：环境变量每个路径以分号分隔的，如果前面路径结尾已经有了分号，那么只需要一个分号。</em></p>
+<p>在命令行下输入<code>gcc –v</code>有如下信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator&gt;gcc -v
+</span></span><span class="line"><span class="cl">Using built-in specs.
+</span></span><span class="line"><span class="cl"><span class="nv">COLLECT_GCC</span><span class="o">=</span>gcc
+</span></span><span class="line"><span class="cl"><span class="nv">COLLECT_LTO_WRAPPER</span><span class="o">=</span>F:/Program<span class="se">\ </span>Files<span class="se">\ </span><span class="o">(</span>x86<span class="o">)</span>/CodeBlocks/MinGW/bin/../libexec/gcc
+</span></span><span class="line"><span class="cl">/mingw32/4.9.2/lto-wrapper.exe
+</span></span><span class="line"><span class="cl">Target: mingw32
+</span></span><span class="line"><span class="cl">…
+</span></span><span class="line"><span class="cl">Thread model: posix
+</span></span><span class="line"><span class="cl">gcc version 4.9.2 <span class="o">(</span>tdm-1<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>看最末尾那行gcc version是4.9.2那么就是成功配置了。wxWidgets对编译器的版本也有要求的，如果是新手，建议使用CodeBlocks自带的编译器。</p>
+<h3 id="4-编译wxwidgets-303">4# 编译wxWidgets 3.0.3<a hidden class="anchor" aria-hidden="true" href="#4-编译wxwidgets-303">#</a></h3>
+<p>在命令进入wxWigets的build/msw文件夹，例如我的是F:\wxWidgets-3.0.3\build\msw这个路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">F:
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> F:<span class="se">\w</span>xWidgets-3.0.3<span class="se">\b</span>uild<span class="se">\m</span>sw
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来就是make了。</p>
+<p>编译命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mingw32-make -j2 -f makefile.gcc <span class="nv">BUILD</span><span class="o">=</span>release <span class="nv">SHARED</span><span class="o">=</span><span class="m">0</span> <span class="nv">MONOLITHIC</span><span class="o">=</span><span class="m">1</span> <span class="nv">UNICODE</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">mingw32-make -j2 -f makefile.gcc <span class="nv">BUILD</span><span class="o">=</span>debug <span class="nv">SHARED</span><span class="o">=</span><span class="m">0</span> <span class="nv">MONOLITHIC</span><span class="o">=</span><span class="m">1</span> <span class="nv">UNICODE</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里使用开两个线程来编译，加入参数-j2，以加快速度，第一次运行会直接提示出错，再运行同样的命令一次就不会出问题了。当然如果不加-j2，也没问题，以正常的速度编译。值得一说的是，可以开两个命令行窗口同时编译，运行上面命令。比如一个窗口编译release版本，一个窗口编译debug版本。速度也能大大加快。</p>
+<p>还有其他的一些参数解释如下：
+<strong>BUILD</strong>
+BUILD控制wxWidgets构建调试版本（BUILD=debug）或者是发布版本（BUILD=release）。绝大多数情况下你只需要 wxWidgets的发布版本就可以了，因为你应该不想要去调试wxWidgets自身，同时你依然可以通过链接wxWidgets的发布版本来构建你自己的程序的调试版本。</p>
+<p><strong>SHARED</strong>
+SHARED控制wxWidgets是构建DLL（SHARED=1）还是静态库（SHARED=0）。利用构建的DLL，主程序构建时间较快，可执行文件更小。但是可执行文件加上wxWidgets DLL的总大小更大，但是不同的可执行文件可以使用同一个DLL。</p>
+<p><strong>MONOLITHIC</strong>
+MONOLITHIC控制是构建一个单一的库（MONOLITHIC=1）还是多个组件库（MONOLITHIC=0）。使用单一构建，项目的设置 和开发会更加简单，如果你同时使用DLL构建的话，你只需要分发一个DLL文件。如果使用非单一构建（multilib），会构建出多个不同的库同时你可 以避免将整个wxWidgets的基本代码链接到主程序，就可以去掉不需要的库。同时你也必须确保你选择了正确的组件库。</p>
+<p><strong>UNICODE</strong>
+UNICODE控制wxWidgets以及你的程序是否使用支持Unicode的宽字符串。</p>
+<h3 id="5-配置codeblocks">5# 配置CodeBlocks<a hidden class="anchor" aria-hidden="true" href="#5-配置codeblocks">#</a></h3>
+<p>编译好了以后还有在CodeBlocks上配置一下。
+在<code>Settings--&gt;Global Variable Editor上Current Variable</code>这个选项上New，输入wx。
+然后设置下base、include和lib，例如我的wxWidgets安装位置是<code>F:\wxWidgets-3.0.3</code>
+<img loading="lazy" src="/assets/tech/2017-06-07/2017-06-06_222630.png" title="CodeBlcoks wxWidgets变量配置"></p>
+<h3 id="6-进行测试">6# 进行测试<a hidden class="anchor" aria-hidden="true" href="#6-进行测试">#</a></h3>
+<p>下面是新建工程测试。
+有一个事情是必须记住的，要记住编译时的参数。
+上面的命令一共编译了两个版本，release和debug版，在构建项目的时候，两个都可以勾选。而且，SHARED=0代表使用静态库，Use wxWidgets DLL不勾选，MONOLITHIC=1 表示使用单一的库，wxWidgets is build as a monolithic library就要勾选，同理UNICODE=1表示支持Unicode，这样Enable unicode也要勾选。
+<img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005128.png" title="新建wxWidgets工程"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005316.png" title="设置wxWidgets工程名称和目录"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005403.png" title="设置作者信息"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005503.png" title="设置GUI类型"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005509.png" title="设置wx变量"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005519.png" title="设置编译选项，release和debug"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005531.png" title="设置wxWidgets编译时的一些参数"></p>
+<p><img loading="lazy" src="/assets/tech/2017-06-07/2017-06-07_005624-1024x656.png" title="测试"></p>
+<h3 id="7-正常使用">7# 正常使用<a hidden class="anchor" aria-hidden="true" href="#7-正常使用">#</a></h3>
+<p>接下来可以随意使用了。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.zeyes.org/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+      <li><a href="https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/eclipse-mysql/">
+    <span class="title">« 上一页</span>
+    <span>Eclipse Neon配置Mysql</span>
+  </a>
+  <a class="next" href="https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/">
+    <span class="title">下一页 »</span>
+    <span>Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

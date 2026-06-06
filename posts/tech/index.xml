@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Teches on 问道凌虚</title>
+    <link>https://www.zeyes.org/posts/tech/</link>
+    <description>Recent content in Teches on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Sun, 07 Jun 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/posts/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PaperMod使用Chroma切换代码高亮明暗主题</title>
+      <link>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</link>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</guid>
+      <description>&lt;p&gt;最近给博客调整代码高亮样式时，遇到一个小问题：使用 Hugo 的 Chroma 高亮，并设置 &lt;code&gt;noClasses: true&lt;/code&gt;、&lt;code&gt;style: &amp;quot;tango&amp;quot;&lt;/code&gt; 后，一些代码块看起来颜色特别浅。尤其是生成出来带有 &lt;code&gt;class=&amp;quot;language-fallback&amp;quot;&lt;/code&gt; 的代码块，浅灰背景配浅灰文字，阅读体验不太好。&lt;/p&gt;
+&lt;p&gt;折腾了一圈后，发现更适合 PaperMod 的方式是：关闭内联样式，使用 Chroma 生成 CSS 类，然后自己准备亮色和暗色两套高亮样式，让它们跟随 PaperMod 的主题切换。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>微信小游戏《萌宠变变变》模拟点击开发</title>
+      <link>https://www.zeyes.org/posts/tech/wx-game-dogbian/</link>
+      <pubDate>Sat, 05 May 2018 20:43:23 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/wx-game-dogbian/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;每当在屏幕点击宠物的时候，金钱的方法就会额外增加，同时心跳包会带上点击的宠物ID和点击次数发给服务器。
+所以，可以使用HttpClient来模拟心跳包来实现金钱的额外增长，实际加的很少，但也好过没有。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Java工具类Observable源码解析与使用</title>
+      <link>https://www.zeyes.org/posts/tech/java-learn-observable/</link>
+      <pubDate>Sat, 05 May 2018 14:46:56 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/java-learn-observable/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;很多地方，我们需要使用观察者设计模式，而Java内部有提供了这样的一个类。通过继承Observable类和实现Observer接口，就可以省下一些代码，不用我们自己去实现这些代码。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java工具类Timer源码解析与使用</title>
+      <link>https://www.zeyes.org/posts/tech/java-learn-timer/</link>
+      <pubDate>Sat, 05 May 2018 01:46:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/java-learn-timer/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;通常我们需要定时执行一些任务，这时候可以使用Timer来完成，准确来说是Timer和TimerTask两个类配合完成。Timer是一个工具类，而TimerTask是一个抽象类，实现了Runnable接口。通过继承TimerTask可以定制我们自己的任务，并将我们自己的TimerTask加入Timer中。
+Timer内部会调用TimerTask的run方法来执行业务流程。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hexo折腾记</title>
+      <link>https://www.zeyes.org/posts/tech/install-hexo-and-next/</link>
+      <pubDate>Mon, 30 Apr 2018 18:54:13 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/install-hexo-and-next/</guid>
+      <description>&lt;h2 id=&#34;hexo折腾过程&#34;&gt;Hexo折腾过程&lt;/h2&gt;
+&lt;h3 id=&#34;01安装git&#34;&gt;01#安装git&lt;/h3&gt;
+&lt;p&gt;下载地址：&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;02安装nodejs&#34;&gt;02#安装Node.js&lt;/h3&gt;
+&lt;p&gt;下载地址：&lt;a href=&#34;https://nodejs.org/en/download/&#34;&gt;https://nodejs.org/en/download/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;03安装hexo&#34;&gt;03#安装Hexo&lt;/h3&gt;
+&lt;p&gt;进入Git Bash，在某个地方创建一个目录，比如&lt;code&gt;E:/hexo&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /e/hexo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install -g cnpm --registry&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://registry.npm.taobao.org
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-cli -g
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hexo init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-server --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-deployer-git --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-generator-index --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-generator-archive --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-generator-tag --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-generator-feed --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-generator-sitemap --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-generator-baidu-sitemap --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cnpm install hexo-related-popular-posts --save
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#cnpm install hexo-generator-searchdb --save&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#cnpm install hexo-algolia --save&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#cnpm install hexo-asset-image --save&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#cnpm instal hexo-util --save-dev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#cnpm install hexo-leancloud-counter-security --save&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;04安装next主题&#34;&gt;04#安装Next主题&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/theme-next/hexo-theme-next.git themes/next
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/theme-next/theme-next-algolia-instant-search themes/next/source/lib/algolia-instant-search
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;05配置hexo&#34;&gt;05#配置Hexo&lt;/h3&gt;
+&lt;p&gt;配置文件：&lt;code&gt;_config.yml&lt;/code&gt;
+官方文档：&lt;a href=&#34;https://hexo.io/zh-cn/docs/&#34;&gt;https://hexo.io/zh-cn/docs/&lt;/a&gt;
+个人喜好配置：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解决用Eclipse EE写JSP代码时，自动括号补全问题</title>
+      <link>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</link>
+      <pubDate>Sat, 18 Nov 2017 14:43:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</guid>
+      <description>&lt;p&gt;这个问题其实是烦恼了挺久的，就我本人而言，通常不用括号补全，我觉得手打比较完整，在学JSP以前，用Eclipse虽然他带括号补全，但是也不影响手打，比如打括号时，不会出现三个括号。
+而JSP的Editor就比较烦人了。比如打&amp;lt;%%&amp;gt;会出现&amp;lt;%%&amp;raquo;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>D客户端(中兴802.1X) For OpenWrt</title>
+      <link>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</link>
+      <pubDate>Sun, 01 Oct 2017 11:59:58 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;学校用的是中兴802.1X认证，只有通过认证的客户端才能上内网和外网。外网登录天翼校园网才能上网。而官方的中兴802.1X客户端，只能运行在Window平台上，并且不能共享WIFI。因此下决心开发了个OpenWrt版的中兴802.1X客户端，这个客户端不同的是专门为我校写的，所以还带了登录天翼校园网的功能。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 16.04 菜单栏消失的解决办法</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</link>
+      <pubDate>Sun, 17 Sep 2017 09:33:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</guid>
+      <description>&lt;p&gt;今天无缘无故，ubuntu的菜单栏就消失了。找了以下终于找到了解决办法。&lt;/p&gt;
+&lt;p&gt;打开命令行窗口，输入以下语句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf reset -f /org/compiz/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;setsid unity
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后，菜单栏就回来了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ubuntu中Codeblock运行中文乱码解决方法</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</link>
+      <pubDate>Sat, 16 Sep 2017 19:09:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</guid>
+      <description>&lt;h3 id=&#34;中文乱码解决方案&#34;&gt;中文乱码解决方案&lt;/h3&gt;
+&lt;p&gt;“设置”菜单下选“环境设置”：&lt;/p&gt;
+&lt;p&gt;“常规设置”，最下面&amp;quot;启动控制台程序的终端”，选择gnome-terminal -t $TITLE -x
+原来是xterm -T $TITLE –e&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</link>
+      <pubDate>Fri, 15 Sep 2017 13:37:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</guid>
+      <description>&lt;p&gt;最近开机总是遇到一段提示，内容大概是这样：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下载额外数据文件失败
+以下软件包要求安装后下载附加数据，但其数据无法下载或无法处理。
+ttf-mscorefonts-installer
+稍后系统将自动重试下载，您也可以手工立即重试。执行此命令需要有活动的网络连接。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eclipse Neon配置Mysql</title>
+      <link>https://www.zeyes.org/posts/tech/eclipse-mysql/</link>
+      <pubDate>Thu, 15 Jun 2017 16:13:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/eclipse-mysql/</guid>
+      <description>&lt;h3 id=&#34;1-要下载的资料&#34;&gt;1# 要下载的资料&lt;/h3&gt;
+&lt;p&gt;MySQL Connector/J 6.0
+下载网址：&lt;a href=&#34;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&#34;&gt;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&lt;/a&gt;
+查看最新版本下载链接：&lt;a href=&#34;https://dev.mysql.com/downloads/connector/j/&#34;&gt;https://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-解压文件&#34;&gt;2# 解压文件&lt;/h3&gt;
+&lt;p&gt;解压mysql-connector-java-6.0.6.zip，可得如下文件：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-06-15/63546416.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CodeBlocks 16.01&#43;wxWidgets 3.03配置</title>
+      <link>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</link>
+      <pubDate>Wed, 07 Jun 2017 01:35:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
+      <description>&lt;h3 id=&#34;1-下载codeblocks-1601和wxwidgets-303&#34;&gt;1# 下载CodeBlocks 16.01和wxWidgets 3.0.3&lt;/h3&gt;
+&lt;p&gt;CodeBlocks 16.01 下载地址：&lt;a href=&#34;http://www.codeblocks.org/downloads/&#34;&gt;http://www.codeblocks.org/downloads/&lt;/a&gt;
+wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/downloads/&#34;&gt;https://www.wxwidgets.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最新的wxWidgets 3.1.0 但是这里面没有使用这个版本的原因是CodeBlocks 16.01是2016.01发布的，而wxWidgets 3.1.0是2016.02发布的，这个版本的CodeBlocks没有集成3.10的配置。如果非要用也行，要改项目工程文件的配置。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘</title>
+      <link>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</link>
+      <pubDate>Sun, 04 Jun 2017 12:06:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</guid>
+      <description>&lt;h3 id=&#34;1-给root用户设置密码&#34;&gt;1# 给root用户设置密码&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo passwd root
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install numlockx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-使用命令行登录root&#34;&gt;2# 使用命令行登录root&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nautilus
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样弹出来的文件管理器就有root权限了(当然只是临时的)，为了方便改文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用OpenVPN对校园网内网穿透</title>
+      <link>https://www.zeyes.org/posts/tech/openvpn-nat/</link>
+      <pubDate>Sat, 22 Apr 2017 21:54:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/openvpn-nat/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。
+&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;00-前言&#34;&gt;#00 前言&lt;/h3&gt;
+&lt;p&gt;最近对穿透学校的内网有需求，于是决定搭建环境。
+网上的教程大多都是客户端访问服务器的内网，
+但这个教程是，穿透客户端所在内网，由服务器访问客户端的内网。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>wxWidgets学习 - wxStaticText类</title>
+      <link>https://www.zeyes.org/posts/tech/wx-static-text-learn/</link>
+      <pubDate>Wed, 14 Dec 2016 23:59:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/wx-static-text-learn/</guid>
+      <description>&lt;h2 id=&#34;wxstatictext类&#34;&gt;wxStaticText类&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;wx/stattext.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;静态文本控件，显示一行或者多行只读文本。
+wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
+&lt;h3 id=&#34;样式styles&#34;&gt;样式(Styles)&lt;/h3&gt;
+&lt;p&gt;这个类支持以下样式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;wxALIGN_LEFT&lt;/strong&gt;： 文本向左对齐。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxALIGN_RIGHT&lt;/strong&gt;： 文本向右对齐。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxALIGN_CENTRE_HORIZONTAL&lt;/strong&gt;： 文本水平居中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_NO_AUTORESIZE&lt;/strong&gt;： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_ELLIPSIZE_START&lt;/strong&gt;： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_ELLIPSIZE_MIDDLE&lt;/strong&gt;： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_ELLIPSIZE_END&lt;/strong&gt;： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;公开成员函数public-member-functions&#34;&gt;公开成员函数（Public Member Functions)&lt;/h3&gt;
+&lt;p&gt;wxStaticText()
+默认构造函数&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 16.04 安装CodeBlocks</title>
+      <link>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</link>
+      <pubDate>Fri, 14 Oct 2016 23:46:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</guid>
+      <description>&lt;p&gt;CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。&lt;/p&gt;
+&lt;p&gt;在Ubuntu 16.04下就比较简单了。&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>HDU 1004 Let the Balloon Rise</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1004/</link>
+      <pubDate>Mon, 06 Jul 2015 20:50:19 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1004/</guid>
+      <description>&lt;h2 id=&#34;let-the-balloon-rise&#34;&gt;Let the Balloon Rise&lt;/h2&gt;
+&lt;p&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges&amp;rsquo; favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result.&lt;/p&gt;
+&lt;p&gt;This year, they decide to leave this lovely job to you.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1003 Max Sum</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1003/</link>
+      <pubDate>Sun, 05 Jul 2015 20:45:38 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1003/</guid>
+      <description>&lt;h2 id=&#34;max-sum&#34;&gt;Max Sum&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;Given a sequence a[1],a[2],a[3]&amp;hellip;&amp;hellip;a[n], your job is to calculate the max sum of a sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 + (-1) + 5 + 4 = 14.&lt;/p&gt;
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input contains an integer T(1&amp;lt;=T&amp;lt;=20) which means the number of test cases. Then T lines follow, each line starts with a number N(1&amp;lt;=N&amp;lt;=100000), then N integers followed(all the integers are between -1000 and 1000).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1002 A &#43; B Problem II</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1002/</link>
+      <pubDate>Sat, 04 Jul 2015 20:39:18 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1002/</guid>
+      <description>&lt;h2 id=&#34;a--b-problem-ii&#34;&gt;A + B Problem II&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;I have a very simple problem for you. Given two integers A and B, your job is to calculate the Sum of A + B.&lt;/p&gt;
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input contains an integer T(1&amp;lt;=T&amp;lt;=20) which means the number of test cases. Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers are very large, that means you should not process them by using 32-bit integer. You may assume the length of each integer will not exceed 1000.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>归并排序(Merge Sort)</title>
+      <link>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</link>
+      <pubDate>Wed, 24 Jun 2015 20:33:32 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;归并排序&lt;/strong&gt;是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（&lt;em&gt;当然这个是比较业余的说法，如果想得到准确答案，问度娘。&lt;/em&gt;）归并排序的时间复杂度为&lt;strong&gt;O(nlgn)&lt;/strong&gt;，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;算法原理&#34;&gt;算法原理&lt;/h3&gt;
+&lt;p&gt;1.二路归并排序是将两个已经有序的数组重新组合到一个有序的数组。
+递归部分：
+2.因为一个随机的数组分成两个数组（假设A和B）之后一般（A和B）不会是有序的，所以递归求解。
+3.直到最后一个元素（一个元素是不用排序的），一个元素看成一个数组是有序的，所以递归返回。
+非递归部分：
+4.申请两个临时数组，用来存放分开的两组数据。
+5.两个临时数组比较，哪边小就从哪边抽出元素放回原数组。（这里指的是升序排序）
+6.直到没有。（为了少写代码，设置两个无穷大的数在数组的最后，效果自己模拟下看看）&lt;/p&gt;
+</description>
+    </item>
+    <item>
+      <title>POJ 1804 Brainman</title>
+      <link>https://www.zeyes.org/posts/tech/poj-1804/</link>
+      <pubDate>Tue, 23 Jun 2015 20:11:42 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/poj-1804/</guid>
+      <description>&lt;h1 id=&#34;brainman&#34;&gt;Brainman&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 1000MS Memory Limit: 30000K
+Total Submissions: 8755 Accepted: 4723&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;h4 id=&#34;background&#34;&gt;Background&lt;/h4&gt;
+&lt;p&gt;Raymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spilled all over the floor in an instant just by glancing at them. And he can even count Poker cards. Charlie would love to be able to do cool things like that, too. He wants to beat his brother in a similar task.&lt;/p&gt;
+&lt;h4 id=&#34;problem&#34;&gt;Problem&lt;/h4&gt;
+&lt;p&gt;Here&amp;rsquo;s what Charlie thinks of. Imagine you get a sequence of N numbers. The goal is to move the numbers around so that at the end the sequence is ordered. The only operation allowed is to swap two adjacent numbers. Let us try an example:
+Start with: 2 8 0 3
+swap (2 8) 8 2 0 3
+swap (2 0) 8 0 2 3
+swap (2 3) 8 0 3 2
+swap (8 0) 0 8 3 2
+swap (8 3) 0 3 8 2
+swap (8 2) 0 3 2 8
+swap (3 2) 0 2 3 8
+swap (3 8) 0 2 8 3
+swap (8 3) 0 2 3 8&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>选择排序（Selection Sort）</title>
+      <link>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</link>
+      <pubDate>Sun, 21 Jun 2015 20:03:48 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</guid>
+      <description>&lt;strong&gt;选择排序&lt;/strong&gt;是经典排序的一种，最差的时间复杂度为&lt;strong&gt;O(n^2&lt;/strong&gt;)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。</description>
+    </item>
+    <item>
+      <title>插入排序的C语言实现</title>
+      <link>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</link>
+      <pubDate>Sat, 20 Jun 2015 15:08:08 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</guid>
+      <description>&lt;strong&gt;插入排序&lt;/strong&gt;，稳定排序的一种,&lt;strong&gt;平均时间复杂度为O(n^2)&lt;/strong&gt;,它的代码量很小，对于处理小数据的排序还是可以的。
+排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。</description>
+    </item>
+    <item>
+      <title>Kruskal算法的C语言实现（并查集版）</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-kruskal/</link>
+      <pubDate>Sun, 23 Feb 2014 00:07:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-kruskal/</guid>
+      <description>Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。</description>
+    </item>
+    <item>
+      <title>浅谈const关键字与指针、define、typedef混用</title>
+      <link>https://www.zeyes.org/posts/tech/study-const-define-typedef/</link>
+      <pubDate>Sat, 08 Feb 2014 15:19:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-const-define-typedef/</guid>
+      <description>&lt;p&gt;下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;区分它们是非常简单的，只需要下面记住两条规则：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Prim算法的C语言实现</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-prim/</link>
+      <pubDate>Sat, 01 Feb 2014 14:54:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-prim/</guid>
+      <description>普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</description>
+    </item>
+    <item>
+      <title>[转载]数组名与指针</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-array/</link>
+      <pubDate>Tue, 28 Jan 2014 21:24:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-array/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。
+想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&amp;quot;深入探索&amp;quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dijkstra算法的C语言实现</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-dijkstra/</link>
+      <pubDate>Sun, 26 Jan 2014 17:00:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-dijkstra/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>可变参数的使用</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-stdarg/</link>
+      <pubDate>Thu, 23 Jan 2014 23:55:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-stdarg/</guid>
+      <description>&lt;p&gt;通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。
+例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;abc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用字符串输入</title>
+      <link>https://www.zeyes.org/posts/tech/study-c-scanf/</link>
+      <pubDate>Tue, 21 Jan 2014 00:06:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-c-scanf/</guid>
+      <description>&lt;p&gt;scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;word&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;请输入一个英文句子n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%s&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;word&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%sn&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;word&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;编译运行，输入一个英文句子，比如Zeyes Studio，接着便输出Zeyes&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>【2014端午纪念版】抽签系统3.25-Final</title>
+      <link>https://www.zeyes.org/posts/tech/e-random-number-system/</link>
+      <pubDate>Mon, 20 Jan 2014 13:50:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/e-random-number-system/</guid>
+      <description>“2014端午纪念版”抽签系统3.25最终版，是一款面向学生课堂用的趣味抽签应用。</description>
+    </item>
+  </channel>
+</rss>

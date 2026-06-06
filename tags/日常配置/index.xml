@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>日常配置 on 问道凌虚</title>
+    <link>https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 日常配置 on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Sun, 29 Apr 2018 22:47:32 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决用Eclipse EE写JSP代码时，自动括号补全问题</title>
+      <link>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</link>
+      <pubDate>Sat, 18 Nov 2017 14:43:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</guid>
+      <description>&lt;p&gt;这个问题其实是烦恼了挺久的，就我本人而言，通常不用括号补全，我觉得手打比较完整，在学JSP以前，用Eclipse虽然他带括号补全，但是也不影响手打，比如打括号时，不会出现三个括号。
+而JSP的Editor就比较烦人了。比如打&amp;lt;%%&amp;gt;会出现&amp;lt;%%&amp;raquo;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ubuntu中Codeblock运行中文乱码解决方法</title>
+      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</link>
+      <pubDate>Sat, 16 Sep 2017 19:09:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</guid>
+      <description>&lt;h3 id=&#34;中文乱码解决方案&#34;&gt;中文乱码解决方案&lt;/h3&gt;
+&lt;p&gt;“设置”菜单下选“环境设置”：&lt;/p&gt;
+&lt;p&gt;“常规设置”，最下面&amp;quot;启动控制台程序的终端”，选择gnome-terminal -t $TITLE -x
+原来是xterm -T $TITLE –e&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eclipse Neon配置Mysql</title>
+      <link>https://www.zeyes.org/posts/tech/eclipse-mysql/</link>
+      <pubDate>Thu, 15 Jun 2017 16:13:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/eclipse-mysql/</guid>
+      <description>&lt;h3 id=&#34;1-要下载的资料&#34;&gt;1# 要下载的资料&lt;/h3&gt;
+&lt;p&gt;MySQL Connector/J 6.0
+下载网址：&lt;a href=&#34;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&#34;&gt;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&lt;/a&gt;
+查看最新版本下载链接：&lt;a href=&#34;https://dev.mysql.com/downloads/connector/j/&#34;&gt;https://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-解压文件&#34;&gt;2# 解压文件&lt;/h3&gt;
+&lt;p&gt;解压mysql-connector-java-6.0.6.zip，可得如下文件：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-06-15/63546416.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用OpenVPN对校园网内网穿透</title>
+      <link>https://www.zeyes.org/posts/tech/openvpn-nat/</link>
+      <pubDate>Sat, 22 Apr 2017 21:54:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/openvpn-nat/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。
+&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;00-前言&#34;&gt;#00 前言&lt;/h3&gt;
+&lt;p&gt;最近对穿透学校的内网有需求，于是决定搭建环境。
+网上的教程大多都是客户端访问服务器的内网，
+但这个教程是，穿透客户端所在内网，由服务器访问客户端的内网。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 16.04 安装CodeBlocks</title>
+      <link>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</link>
+      <pubDate>Fri, 14 Oct 2016 23:46:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</guid>
+      <description>&lt;p&gt;CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。&lt;/p&gt;
+&lt;p&gt;在Ubuntu 16.04下就比较简单了。&lt;/p&gt;
+</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[转载]数组名与指针 | 问道凌虚</title>
+<meta name="keywords" content="转载, C语言">
+<meta name="description" content="
+指针是C/C&#43;&#43;语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。
+想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&quot;深入探索&quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/study-c-array/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/study-c-array/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/study-c-array/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="[转载]数组名与指针">
+  <meta property="og:description" content="指针是C/C&#43;&#43;语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&#34;深入探索&#34;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2014-01-28T21:24:00+08:00">
+    <meta property="article:modified_time" content="2018-04-29T23:27:59+08:00">
+    <meta property="article:tag" content="转载">
+    <meta property="article:tag" content="C语言">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[转载]数组名与指针">
+  <meta name="twitter:description" content="指针是C/C&#43;&#43;语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&#34;深入探索&#34;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://www.zeyes.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "[转载]数组名与指针",
+      "item": "https://www.zeyes.org/posts/tech/study-c-array/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[转载]数组名与指针",
+  "name": "[转载]数组名与指针",
+  "description": " 指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以\u0026quot;深入探索\u0026quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！\n",
+  "keywords": [
+    "转载", "C语言"
+  ],
+  "articleBody": " 指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以\"深入探索\"的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！\n魔幻数组名 请看程序（本文程序在WIN32平台下编译）：\n1 2 3 4 5 6 7 8 9 #include //c语言版本 int main(void) { char str[10]; char *pStr = str; printf(\"%d\\n\", sizeof(str)); //输出10 printf(\"%d\\n\", sizeof(pStr)); //输出4 return 0; } 1、数组名不是指针 我们先来推翻\"数组名就是指针\"的说法，用反证法。\n证明　数组名不是指针\n假设：数组名是指针；\n则：pStr和str都是指针；\n因为：在WIN32平台下，指针长度为4；\n所以：上面两个输出都应该为4；\n实际情况是：第一个输出10，第二个输出4；\n所以：假设不成立，数组名不是指针\n2、数组名神似指针 上面我们已经证明了数组名的确不是指针，但是我们再看看这句char *pStr = str;。它将数组名直接赋值给指针，这显得数组名又的确是个指针！\n我们还可以发现数组名显得像指针的例子：\n1 2 3 4 5 6 7 8 9 10 11 #include #include int main(void) { char str1[10] = \"I Love U\"; char str2[10]; strcpy(str2, str1); printf(\"String array 1: %s\\n\", str1); printf(\"String array 2: %s\\n\", str2); return 0; } 标准C库函数strcpy的函数原形中能接纳的两个参数都为char型指针，而我们在调用中传给它的却是两个\n数组名！函数输出：\n1 2 string array 1: I Love U string array 2: I Love U 数组名再一次显得像指针！\n既然数组名不是指针，而为什么到处都把数组名当指针用？于是乎，许多程序员得出这样的结论：数组名(主)是(谓)不是指针的指针(宾)。\n整个一魔鬼。\n揭密数组名 现在到揭露数组名本质的时候了，先给出三个结论：\n(1)数组名的内涵在于其指代实体是一种数据结构，这种数据结构就是数组；\n(2)数组名的外延在于其可以转换为指向其指代实体的指针，而且是一个指针常量；\n(3)指向数组的指针则是另外一种变量类型（在WIN32平台下，长度为4），仅仅意味着数组的存放地址！\n1、数组名指代一种数据结构：数组\n现在可以解释为什么第1个程序printf(\"%d\\n\", sizeof(str));的输出为10的问题，根据结论1，数组名str的内涵为一种数据结构，即一个长度为10的char型数组，所以sizeof(str)的结果为这个数据结构占据的内存大小：10字节。\n再看：\n1 2 int intArray[10]; printf(\"%d\\n\", sizeof(intArray)); /*输出结果为40（整型数组占据的内存空间大小）*/ 2、数组名可作为指针常量\n根据结论2，数组名可以转换为指向其指代实体的指针，所以程序1中的第5行数组名直接赋值给指针，程序2中strcpy(str2, str1);直接将数组名作为指针形参都可成立。\n下面的程序成立吗？\n1 2 int intArray[10]; intArray++; 读者可以编译之，发现编译出错。原因在于，虽然数组名可以转换为指向其指代实体的指针，但是它只能被看作一个指针常量，不能被修改。\n而指针，不管是指向结构体、数组还是基本数据类型的指针，都不包含原始数据结构的内涵，在WIN32平台下，sizeof操作的结果都是4。 顺便纠正一下许多程序员的另一个误解。许多程序员以为sizeof是一个函数，而实际上，sizeof是一个操作符，不过其使用方式看起来的确太像一个函数了。语句sizeof(int)就可以说明sizeof的确不是一个函数，因为函数接纳形参（一个变量），世界上没有一个C/C++函数接纳一个数据类型（如int）为\"形参\"。\n3、数据名可能失去其数据结构内涵\n到这里似乎数组名魔幻问题已经宣告圆满解决，但是平静的湖面上却再次掀起波浪。请看下面一段程序：\n1 2 3 4 5 6 7 8 9 10 11 12 #include void arrayTest(char []); int main(void) { char str1[10] = \"I Love U\"; arrayTest(str1); return 0; } void arrayTest(char str[]) { printf(\"%d\\n\", sizeof(str)); //输出结果为4 } 程序的输出结果为4。不可能吧？\n一个可怕的数字，前面已经提到其为指针的长度!\n结论1指出，数据名内涵为数组这种数据结构，在arrayTest函数体内，str是数组名，那为什么sizeof的结果却是指针的长度？这是因为：\n(1)数组名作为函数形参时，在函数体内，其失去了本身的内涵，仅仅只是一个指针； (2)很遗憾，在失去其内涵的同时，它还失去了其常量特性，可以作自增、自减等操作，可以被修改。 所以，数据名作为函数形参时，其全面沦落为一个普通指针！它的贵族身份被剥夺，成了一个地地道道的只拥有4个字节的平民。\n本文章来自互联网，本人仅作稍加修改。\n",
+  "wordCount" : "1880",
+  "inLanguage": "zh-cn",
+  "datePublished": "2014-01-28T21:24:00+08:00",
+  "dateModified": "2018-04-29T23:27:59+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.zeyes.org/posts/tech/study-c-array/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "问道凌虚",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zeyes.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/tech/">Teches</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      [转载]数组名与指针
+    </h1>
+    <div class="post-meta">
+
+<span title='2014-01-28 21:24:00 +0800 CST'>2014年01月28日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1880 字</span>
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e9%ad%94%e5%b9%bb%e6%95%b0%e7%bb%84%e5%90%8d" aria-label="魔幻数组名">魔幻数组名</a></li>
+                    <li>
+                        <a href="#1%e6%95%b0%e7%bb%84%e5%90%8d%e4%b8%8d%e6%98%af%e6%8c%87%e9%92%88" aria-label="1、数组名不是指针">1、数组名不是指针</a></li>
+                    <li>
+                        <a href="#2%e6%95%b0%e7%bb%84%e5%90%8d%e7%a5%9e%e4%bc%bc%e6%8c%87%e9%92%88" aria-label="2、数组名神似指针">2、数组名神似指针</a></li>
+                    <li>
+                        <a href="#%e6%8f%ad%e5%af%86%e6%95%b0%e7%bb%84%e5%90%8d" aria-label="揭密数组名">揭密数组名</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    
+    document.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+    
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        if (elements.length > 0) {
+            
+            activeElement = elements[0];
+            const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+            document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+        }
+    
+        
+        const topLink = document.getElementById('top-link');
+        if (topLink) {
+            topLink.addEventListener('click', (event) => {
+                
+                event.preventDefault();
+    
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    }, false);
+    
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+    
+    window.addEventListener('scroll', () => {
+        
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+        
+        if (scrollPosition === 0) {
+            return;
+        }
+    
+        
+        if (elements && elements.length > 0) {
+            
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - scrollPosition) > 0 && 
+                    (getOffsetTop(element) - scrollPosition) < window.innerHeight / 2) {
+                    return element;
+                }
+            }) || activeElement;
+    
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                const tocLink = document.querySelector(`.inner ul li a[href="#${id}"]`);
+                if (element === activeElement){
+                    tocLink.classList.add('active');
+    
+                    
+                    const tocContainer = document.querySelector('.toc .inner');
+                    const linkOffsetTop = tocLink.offsetTop;
+                    const containerHeight = tocContainer.clientHeight;
+                    const linkHeight = tocLink.clientHeight;
+    
+                    
+                    const scrollPosition = linkOffsetTop - (containerHeight / 2) + (linkHeight / 2);
+                    tocContainer.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+                } else {
+                    tocLink.classList.remove('active');
+                }
+            });
+        }
+    }, false);
+    
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+    
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+    
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+    
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+    
+</script>
+
+  <div class="post-content md-content"><blockquote>
+<p>指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。
+想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&quot;深入探索&quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！</p>
+</blockquote>
+<h3 id="魔幻数组名">魔幻数组名<a hidden class="anchor" aria-hidden="true" href="#魔幻数组名">#</a></h3>
+<p>请看程序（本文程序在WIN32平台下编译）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#include &lt;stdio.h&gt; //c语言版本</span>
+</span></span><span class="line"><span class="cl">int main<span class="o">(</span>void<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    char str<span class="o">[</span>10<span class="o">]</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    char *pStr <span class="o">=</span> str<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    printf<span class="o">(</span><span class="s2">&#34;%d\n&#34;</span>, sizeof<span class="o">(</span>str<span class="o">))</span><span class="p">;</span>    //输出10
+</span></span><span class="line"><span class="cl">    printf<span class="o">(</span><span class="s2">&#34;%d\n&#34;</span>, sizeof<span class="o">(</span>pStr<span class="o">))</span><span class="p">;</span>   //输出4
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> 0<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1数组名不是指针">1、数组名不是指针<a hidden class="anchor" aria-hidden="true" href="#1数组名不是指针">#</a></h3>
+<p>我们先来推翻&quot;数组名就是指针&quot;的说法，用反证法。</p>
+<p>证明　数组名不是指针</p>
+<p>假设：数组名是指针；</p>
+<p>则：pStr和str都是指针；</p>
+<p>因为：在WIN32平台下，指针长度为4；</p>
+<p>所以：上面两个输出都应该为4；</p>
+<p><strong>实际情况是：第一个输出10，第二个输出4；</strong></p>
+<p>所以：<strong>假设不成立，数组名不是指针</strong></p>
+<h3 id="2数组名神似指针">2、数组名神似指针<a hidden class="anchor" aria-hidden="true" href="#2数组名神似指针">#</a></h3>
+<p>上面我们已经证明了数组名的确不是指针，但是我们再看看这句char *pStr = str;。它将数组名直接赋值给指针，这显得数组名又的确是个指针！</p>
+<p>我们还可以发现数组名显得像指针的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">str1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;I Love U&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">str2</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">strcpy</span><span class="p">(</span><span class="n">str2</span><span class="p">,</span> <span class="n">str1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;String array 1: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">str1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;String array 2: %s</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">str2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>标准C库函数strcpy的函数原形中能接纳的两个参数都为char型指针，而我们在调用中传给它的却是两个</p>
+<p>数组名！函数输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">string array 1: I Love U
+</span></span><span class="line"><span class="cl">string array 2: I Love U
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>数组名再一次显得像指针！</p>
+<p>既然数组名不是指针，而为什么到处都把数组名当指针用？于是乎，许多程序员得出这样的结论：数组名(主)是(谓)不是指针的指针(宾)。</p>
+<p>整个一魔鬼。</p>
+<h3 id="揭密数组名">揭密数组名<a hidden class="anchor" aria-hidden="true" href="#揭密数组名">#</a></h3>
+<p>现在到揭露数组名本质的时候了，先给出三个结论：</p>
+<p>(1)数组名的内涵在于其指代实体是一种数据结构，这种数据结构就是数组；</p>
+<p>(2)数组名的外延在于其可以转换为指向其指代实体的指针，而且是一个指针常量；</p>
+<p>(3)指向数组的指针则是另外一种变量类型（在WIN32平台下，长度为4），仅仅意味着数组的存放地址！</p>
+<p>1、数组名指代一种数据结构：数组</p>
+<p>现在可以解释为什么第1个程序printf(&quot;%d\n&quot;, sizeof(str));的输出为10的问题，根据结论1，数组名str的内涵为一种数据结构，即一个长度为10的char型数组，所以sizeof(str)的结果为这个数据结构占据的内存大小：10字节。</p>
+<p>再看：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">intArray</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">intArray</span><span class="p">));</span>   <span class="cm">/*输出结果为40（整型数组占据的内存空间大小）*/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2、数组名可作为指针常量</p>
+<p>根据结论2，数组名可以转换为指向其指代实体的指针，所以程序1中的第5行数组名直接赋值给指针，程序2中strcpy(str2, str1);直接将数组名作为指针形参都可成立。</p>
+<p>下面的程序成立吗？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">intArray</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">intArray</span><span class="o">++</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>读者可以编译之，发现编译出错。原因在于，虽然数组名可以转换为指向其指代实体的指针，但是它只能被看作一个指针常量，不能被修改。</p>
+<p>而指针，不管是指向结构体、数组还是基本数据类型的指针，都不包含原始数据结构的内涵，在WIN32平台下，sizeof操作的结果都是4。
+顺便纠正一下许多程序员的另一个误解。许多程序员以为sizeof是一个函数，而实际上，sizeof是一个操作符，不过其使用方式看起来的确太像一个函数了。语句sizeof(int)就可以说明sizeof的确不是一个函数，因为函数接纳形参（一个变量），世界上没有一个C/C++函数接纳一个数据类型（如int）为&quot;形参&quot;。</p>
+<p>3、数据名可能失去其数据结构内涵</p>
+<p>到这里似乎数组名魔幻问题已经宣告圆满解决，但是平静的湖面上却再次掀起波浪。请看下面一段程序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">arrayTest</span><span class="p">(</span><span class="kt">char</span> <span class="p">[]);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">str1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;I Love U&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">arrayTest</span><span class="p">(</span><span class="n">str1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">arrayTest</span><span class="p">(</span><span class="kt">char</span> <span class="n">str</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">str</span><span class="p">));</span>    <span class="c1">//输出结果为4
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>程序的输出结果为4。不可能吧？</p>
+<p>一个可怕的数字，前面已经提到其为指针的长度!</p>
+<p>结论1指出，数据名内涵为数组这种数据结构，在arrayTest函数体内，str是数组名，那为什么sizeof的结果却是指针的长度？这是因为：</p>
+<p>　　(1)数组名作为函数形参时，在函数体内，其失去了本身的内涵，仅仅只是一个指针；
+　　(2)很遗憾，在失去其内涵的同时，它还失去了其常量特性，可以作自增、自减等操作，可以被修改。
+所以，数据名作为函数形参时，其全面沦落为一个普通指针！它的贵族身份被剥夺，成了一个地地道道的只拥有4个字节的平民。</p>
+<blockquote>
+<p>本文章来自互联网，本人仅作稍加修改。</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.zeyes.org/tags/%E8%BD%AC%E8%BD%BD/">转载</a></li>
+      <li><a href="https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/study-c-prim/">
+    <span class="title">« 上一页</span>
+    <span>Prim算法的C语言实现</span>
+  </a>
+  <a class="next" href="https://www.zeyes.org/posts/tech/study-c-dijkstra/">
+    <span class="title">下一页 »</span>
+    <span>Dijkstra算法的C语言实现</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

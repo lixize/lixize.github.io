@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>框架学习 on 问道凌虚</title>
+    <link>https://www.zeyes.org/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 框架学习 on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Sun, 29 Apr 2018 21:05:31 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/tags/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wxWidgets学习 - wxStaticText类</title>
+      <link>https://www.zeyes.org/posts/tech/wx-static-text-learn/</link>
+      <pubDate>Wed, 14 Dec 2016 23:59:00 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/wx-static-text-learn/</guid>
+      <description>&lt;h2 id=&#34;wxstatictext类&#34;&gt;wxStaticText类&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;wx/stattext.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;静态文本控件，显示一行或者多行只读文本。
+wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
+&lt;h3 id=&#34;样式styles&#34;&gt;样式(Styles)&lt;/h3&gt;
+&lt;p&gt;这个类支持以下样式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;wxALIGN_LEFT&lt;/strong&gt;： 文本向左对齐。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxALIGN_RIGHT&lt;/strong&gt;： 文本向右对齐。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxALIGN_CENTRE_HORIZONTAL&lt;/strong&gt;： 文本水平居中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_NO_AUTORESIZE&lt;/strong&gt;： 默认情况下，当调用SetLabel()时，控件将调整到适合放下文本的大小。如果给出这个样式标志，控件就不会改变它的大小（这个样式对于具有wxALIGN_RIGHT或wxALIGN_CENTRE_HORIZONTAL样式的控件特别有用，因为否则在调用SetLabel()之后它们将不再有意义了。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_ELLIPSIZE_START&lt;/strong&gt;： 如果标签文本宽度超过控件宽度，则用省略号替换标签的开头部分；此参数调用wxControl::Ellipsize。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_ELLIPSIZE_MIDDLE&lt;/strong&gt;： 如果标签文本宽度超过控件宽度，则用省略号替换标签的中间部分；此参数调用wxControl::Ellipsize。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wxST_ELLIPSIZE_END&lt;/strong&gt;： 如果标签文本宽度超过控件宽度，则用省略号替换标签的末尾部分；此参数调用wxControl::Ellipsize。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;公开成员函数public-member-functions&#34;&gt;公开成员函数（Public Member Functions)&lt;/h3&gt;
+&lt;p&gt;wxStaticText()
+默认构造函数&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

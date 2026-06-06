@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>浅谈const关键字与指针、define、typedef混用 | 问道凌虚</title>
+<meta name="keywords" content="学习, C语言">
+<meta name="description" content="下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。
+
+
+1
+2
+3
+4
+
+
+const int * a = &amp;b;
+int const * a = &amp;b;
+int * const a = &amp;b;
+const int * const a = &amp;b;
+
+
+区分它们是非常简单的，只需要下面记住两条规则：">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/study-const-define-typedef/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/study-const-define-typedef/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/study-const-define-typedef/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="浅谈const关键字与指针、define、typedef混用">
+  <meta property="og:description" content="下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。
+1 2 3 4 const int * a = &amp;b; int const * a = &amp;b; int * const a = &amp;b; const int * const a = &amp;b; 区分它们是非常简单的，只需要下面记住两条规则：">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2014-02-08T15:19:00+08:00">
+    <meta property="article:modified_time" content="2018-04-30T00:09:46+08:00">
+    <meta property="article:tag" content="学习">
+    <meta property="article:tag" content="C语言">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="浅谈const关键字与指针、define、typedef混用">
+  <meta name="twitter:description" content="下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。
+1 2 3 4 const int * a = &amp;b; int const * a = &amp;b; int * const a = &amp;b; const int * const a = &amp;b; 区分它们是非常简单的，只需要下面记住两条规则：">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://www.zeyes.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "浅谈const关键字与指针、define、typedef混用",
+      "item": "https://www.zeyes.org/posts/tech/study-const-define-typedef/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "浅谈const关键字与指针、define、typedef混用",
+  "name": "浅谈const关键字与指针、define、typedef混用",
+  "description": "下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。\n1 2 3 4 const int * a = \u0026amp;b; int const * a = \u0026amp;b; int * const a = \u0026amp;b; const int * const a = \u0026amp;b; 区分它们是非常简单的，只需要下面记住两条规则：\n",
+  "keywords": [
+    "学习", "C语言"
+  ],
+  "articleBody": "下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。\n1 2 3 4 const int * a = \u0026b; int const * a = \u0026b; int * const a = \u0026b; const int * const a = \u0026b; 区分它们是非常简单的，只需要下面记住两条规则：\n如果const位于星号的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量； 如果const位于星号的右侧，const就是修饰指针本身，即指针本身是常量。 于是乎，刚才的四条声明也就容易区分了。\n1 2 3 4 5 const int * a = \u0026b; //const在*的左边 ,用来修饰a所指向的地址的值,*a为常量 int const * a = \u0026b; //这句与上句是相同的，const在*的左边 int * const a = \u0026b; //const在*的右边 那么const修饰的是a本身, a是常量 const int * const a = \u0026b; //a与*a均为常量，都不能被改变 如果还是不明白，请上机测试下，分别给a和*a赋值，常量一般情况是不能被改变的（当然有特殊情况，以后再说）。 我这里再说下const与define、typedef，是否跟我们想象的那样。\n1 2 3 4 5 6 7 typedef int* pint; #define PINT int* int k = 5; const pint m = \u0026k; const PINT n= \u0026k; 我们用一个完整的程序（其实有错误，等下就知道了）来测试。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 #include typedef int* pint; #define PINT int* int k = 5; const pint m = \u0026k; const PINT n= \u0026k; int main(void) { int b = 2; *m = 3; *n = 3; m = \u0026b; n = \u0026b; return 0; } 放上面的代码上去测试，我们看到编译出错了,位置是\n1 *n = 3; 很明显*n是不可改变的，我们自己也可以很容易推是我出来。\n1 2 3 4 #define PINT int* int k = 5; const PINT n= \u0026k; //等价于const int * n = \u0026k; //const PINT n= \u0026k; 被预处理为const int * n = \u0026k; 我们接着这把*n = 3;注释掉，再编译一次，发现又出错了，错误的地方是\n1 m = \u0026b; 也就是说明指针m是常量，这倒是出乎意料了，\n1 2 3 4 typedef int* pint; int k = 5; const pint m = \u0026k; const int* m = \u0026k; //这两句竟然不是相等的！为什么呢？ 其实这里很多人把typedef当成了define。 typedef不是define，typedef是别名。 我们仔细看下pint, pint是指针类型，const的指针当然是int *const\n1 2 3 4 typedef int* pint; int k = 5; const pint m = \u0026k; //相当于int* const m = \u0026k; //typedef不是宏代换，ping是个指针类型，const的指针是int *const 好了，其实const关键字与指针、define、typedef混用也不是太麻烦嘛。\n",
+  "wordCount" : "953",
+  "inLanguage": "zh-cn",
+  "datePublished": "2014-02-08T15:19:00+08:00",
+  "dateModified": "2018-04-30T00:09:46+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.zeyes.org/posts/tech/study-const-define-typedef/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "问道凌虚",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zeyes.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/tech/">Teches</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      浅谈const关键字与指针、define、typedef混用
+    </h1>
+    <div class="post-meta">
+
+<span title='2014-02-08 15:19:00 +0800 CST'>2014年02月08日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>953 字</span>
+
+</div>
+  </header> 
+
+  <div class="post-content md-content"><p>下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="k">const</span> <span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>区分它们是非常简单的，只需要下面记住两条规则：</p>
+<p>如果const位于星号的左侧，则const就是用来修饰指针所指向的变量，即指针指向为常量；
+如果const位于星号的右侧，const就是修饰指针本身，即指针本身是常量。
+于是乎，刚才的四条声明也就容易区分了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span> <span class="c1">//const在*的左边 ,用来修饰a所指向的地址的值,*a为常量
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="k">const</span> <span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span> <span class="c1">//这句与上句是相同的，const在*的左边
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>  <span class="c1">//const在*的右边 那么const修饰的是a本身, a是常量
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span> <span class="c1">//a与*a均为常量，都不能被改变 
+</span></span></span><span class="line"><span class="cl"><span class="err">如果还是不明白，请上机测试下，分别给</span><span class="n">a和</span><span class="o">*</span><span class="n">a赋值</span><span class="err">，常量一般情况是不能被改变的（当然有特殊情况，以后再说）。</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我这里再说下const与define、typedef，是否跟我们想象的那样。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pint</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="cp">#define PINT int*
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">pint</span> <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">PINT</span> <span class="n">n</span><span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们用一个完整的程序（其实有错误，等下就知道了）来测试。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pint</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="cp">#define PINT int*
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">pint</span> <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">PINT</span> <span class="n">n</span><span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">m</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>放上面的代码上去测试，我们看到编译出错了,位置是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">    <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>很明显*n是不可改变的，我们自己也可以很容易推是我出来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define PINT int*
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">PINT</span> <span class="n">n</span><span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span> <span class="c1">//等价于const int * n = &amp;k; 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//const PINT n= &amp;k; 被预处理为const int * n = &amp;k;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们接着这把*n = 3;注释掉，再编译一次，发现又出错了，错误的地方是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也就是说明指针m是常量，这倒是出乎意料了，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">pint</span> <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span> <span class="c1">//这两句竟然不是相等的！为什么呢？
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>其实这里很多人把typedef当成了define。
+typedef不是define，typedef是别名。
+我们仔细看下pint, pint是指针类型，const的指针当然是int *const</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">int</span><span class="o">*</span> <span class="n">pint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">pint</span> <span class="n">m</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">;</span> <span class="c1">//相当于int* const m = &amp;k; 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//typedef不是宏代换，ping是个指针类型，const的指针是int *const
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>好了，其实const关键字与指针、define、typedef混用也不是太麻烦嘛。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/study-c-kruskal/">
+    <span class="title">« 上一页</span>
+    <span>Kruskal算法的C语言实现（并查集版）</span>
+  </a>
+  <a class="next" href="https://www.zeyes.org/posts/tech/study-c-prim/">
+    <span class="title">下一页 »</span>
+    <span>Prim算法的C语言实现</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

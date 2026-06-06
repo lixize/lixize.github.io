@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>技术 | 问道凌虚</title>
+<meta name="keywords" content="">
+<meta name="description" content="技术 - 问道凌虚">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/topics/tech/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://www.zeyes.org/topics/tech/index.xml" title="rss">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/topics/tech/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/topics/tech/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="技术">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="技术">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "分类",
+      "item": "https://www.zeyes.org/topics/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "技术",
+      "item": "https://www.zeyes.org/topics/tech/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span class="active">💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<header class="page-header"><nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/topics/">分类</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+  <h1>技术</h1>
+</header>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">POJ 1804 Brainman
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Brainman Time Limit: 1000MS Memory Limit: 30000K Total Submissions: 8755 Accepted: 4723
+Description Background Raymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spilled all over the floor in an instant just by glancing at them. And he can even count Poker cards. Charlie would love to be able to do cool things like that, too. He wants to beat his brother in a similar task.
+Problem Here’s what Charlie thinks of. Imagine you get a sequence of N numbers. The goal is to move the numbers around so that at the end the sequence is ordered. The only operation allowed is to swap two adjacent numbers. Let us try an example: Start with: 2 8 0 3 swap (2 8) 8 2 0 3 swap (2 0) 8 0 2 3 swap (2 3) 8 0 3 2 swap (8 0) 0 8 3 2 swap (8 3) 0 3 8 2 swap (8 2) 0 3 2 8 swap (3 2) 0 2 3 8 swap (3 8) 0 2 8 3 swap (8 3) 0 2 3 8
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-06-23 20:11:42 +0800 CST'>2015年06月23日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>807 字</span></footer>
+  <a class="entry-link" aria-label="post link to POJ 1804 Brainman" href="https://www.zeyes.org/posts/tech/poj-1804/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">选择排序（Selection Sort）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>选择排序是经典排序的一种，最差的时间复杂度为O(n^2)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-06-21 20:03:48 +0800 CST'>2015年06月21日</span>&nbsp;·&nbsp;<span>1 分钟</span>&nbsp;·&nbsp;<span>442 字</span></footer>
+  <a class="entry-link" aria-label="post link to 选择排序（Selection Sort）" href="https://www.zeyes.org/posts/tech/c-selection-sort-learn/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">插入排序的C语言实现
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>插入排序，稳定排序的一种,平均时间复杂度为O(n^2),它的代码量很小，对于处理小数据的排序还是可以的。 排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2015-06-20 15:08:08 +0800 CST'>2015年06月20日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>721 字</span></footer>
+  <a class="entry-link" aria-label="post link to 插入排序的C语言实现" href="https://www.zeyes.org/posts/tech/c-insert-sort-learn/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Kruskal算法的C语言实现（并查集版）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-02-23 00:07:00 +0800 CST'>2014年02月23日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>889 字</span></footer>
+  <a class="entry-link" aria-label="post link to Kruskal算法的C语言实现（并查集版）" href="https://www.zeyes.org/posts/tech/study-c-kruskal/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">浅谈const关键字与指针、define、typedef混用
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。
+1 2 3 4 const int * a = &amp;b; int const * a = &amp;b; int * const a = &amp;b; const int * const a = &amp;b; 区分它们是非常简单的，只需要下面记住两条规则：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-02-08 15:19:00 +0800 CST'>2014年02月08日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>953 字</span></footer>
+  <a class="entry-link" aria-label="post link to 浅谈const关键字与指针、define、typedef混用" href="https://www.zeyes.org/posts/tech/study-const-define-typedef/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Prim算法的C语言实现
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-02-01 14:54:00 +0800 CST'>2014年02月01日</span>&nbsp;·&nbsp;<span>3 分钟</span>&nbsp;·&nbsp;<span>1148 字</span></footer>
+  <a class="entry-link" aria-label="post link to Prim算法的C语言实现" href="https://www.zeyes.org/posts/tech/study-c-prim/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[转载]数组名与指针
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 指针是C/C&#43;&#43;语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&#34;深入探索&#34;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-01-28 21:24:00 +0800 CST'>2014年01月28日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1880 字</span></footer>
+  <a class="entry-link" aria-label="post link to [转载]数组名与指针" href="https://www.zeyes.org/posts/tech/study-c-array/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Dijkstra算法的C语言实现
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-01-26 17:00:00 +0800 CST'>2014年01月26日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>803 字</span></footer>
+  <a class="entry-link" aria-label="post link to Dijkstra算法的C语言实现" href="https://www.zeyes.org/posts/tech/study-c-dijkstra/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">可变参数的使用
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。 例如：
+1 int abc(int a, int b, int c); 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-01-23 23:55:00 +0800 CST'>2014年01月23日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1541 字</span></footer>
+  <a class="entry-link" aria-label="post link to 可变参数的使用" href="https://www.zeyes.org/posts/tech/study-c-stdarg/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">使用字符串输入
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。
+代码如下：
+1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt;; int main(void) { char word[40]; printf(&#34;请输入一个英文句子n&#34;); scanf(&#34;%s&#34;, word); printf(&#34;%sn&#34;, word); return 0; } 编译运行，输入一个英文句子，比如Zeyes Studio，接着便输出Zeyes
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-01-21 00:06:00 +0800 CST'>2014年01月21日</span>&nbsp;·&nbsp;<span>1 分钟</span>&nbsp;·&nbsp;<span>158 字</span></footer>
+  <a class="entry-link" aria-label="post link to 使用字符串输入" href="https://www.zeyes.org/posts/tech/study-c-scanf/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://www.zeyes.org/topics/tech/page/2/">
+      «&nbsp;上一页&nbsp;
+    </a>
+    <a class="next" href="https://www.zeyes.org/topics/tech/page/4/">下一页&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

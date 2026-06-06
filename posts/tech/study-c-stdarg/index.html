@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>可变参数的使用 | 问道凌虚</title>
+<meta name="keywords" content="学习, C语言">
+<meta name="description" content="通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。
+例如：
+
+
+1
+
+
+int abc(int a, int b, int c);
+
+
+若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/study-c-stdarg/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/study-c-stdarg/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/study-c-stdarg/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="可变参数的使用">
+  <meta property="og:description" content="通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。 例如：
+1 int abc(int a, int b, int c); 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2014-01-23T23:55:00+08:00">
+    <meta property="article:modified_time" content="2018-04-29T23:12:16+08:00">
+    <meta property="article:tag" content="学习">
+    <meta property="article:tag" content="C语言">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="可变参数的使用">
+  <meta name="twitter:description" content="通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。 例如：
+1 int abc(int a, int b, int c); 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://www.zeyes.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "可变参数的使用",
+      "item": "https://www.zeyes.org/posts/tech/study-c-stdarg/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "可变参数的使用",
+  "name": "可变参数的使用",
+  "description": "通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。 例如：\n1 int abc(int a, int b, int c); 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：\n",
+  "keywords": [
+    "学习", "C语言"
+  ],
+  "articleBody": "通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。 例如：\n1 int abc(int a, int b, int c); 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：\n1 2 printf(“%d%d”, a, b); printf(“%d%d”,a, b, c); 以上两个调用都能正常返回结果。其实他就是一个可变参数函数。\n可变参数函数是指一个函数拥有不定引数，即是它接受一个可变量目的参数。在C语言中，C标准函式库的stdarg.h标头档定义了提供可变参数函数使用的宏。在C++，应该使用标头档cstdarg。\nstdarg.h数据类型\n类型名称 描述 相容 va_list 用来保存宏va_arg与宏va_end所需信息 C89 stdarg.h宏\n巨集名称 描述 相容 va_start 使va_list指向起始的参数 C89 va_arg 检索参数 C89 va_end 释放va_list C89 va_copy 拷贝va_list的内容 C99 函数printf()的声明是这样的：int printf(char *fmt, …); 后面“…”表示表示参数表中参数的数量和类型都是可变的。 我们看例子： 1 2 3 4 5 6 7 8 9 10 11 12 #include //必须的头文件 double average(int count, ...) { va_list ap; int j; double tot = 0; va_start(ap, count); //使va_list指向起始的参数 for(j=0; j\u003ccount; j++) tot+=va_arg(ap, double); //检索参数，必须按需要指定类型 va_end(ap); //释放va_list return tot/count; } va_list是一个类型，va_start，va_arg是宏，\nva_start原型：va_start(va_list ap, lastarg); //lastarg是函数的最后一个有名参数（如果有多个有名参数）。 va_arg原型：类型 va_arg(va_list ap, 类型); //在va_arg里面指定什么类型，就返回什么类型 va_end原型：void va_end(va_list ap); //释放ap\nva_list类型用于声明一个变量（我这里把他写成ap，其实是随意的，就像声明int一样，变量名称当然是随意的），该变量将依次引用各参数。\n我们要用va_start初始化va_list才能正常使用。在上面例子里，参数中包含一个有名参数count，和不知道多少个无名的形参（如果有多个有名的参数，我们要把最右边也就是最后一个有名参数传给va_start，例如double average(int count1，int count2, …),我们应该这样va_start(ap, count2);）说是初始化，实际上是把va_list指向第一个无名参数。也就是说，ap被初始化为指向第一个无名参数的指针。\n我们接着如何使用，这些没有名字的参数呢。我们可以用va_arg，我们用va_arg来决定返回对象的类型和指针移动的步长。va_arg(ap, double)，指针是ap（用前必须用va_start初始化）,第一次调用它，返回的是第一个无名参数，第二次调用它，返回的是第二个无名参数，以此类推。返回的参数，在形参上是用“…”代替的，每次调用va_arg必须指定一个返回的类型，例如上面的double。\n我们在调用完可变参数后,应该使用va_end做一些必要的清理工作，例如va_end(ap);\n（提示：我们看count这个参数是有名字的，既然有名字，我们就可以用它做一些工作，在上面的例子，他就是用来传递参数的个数，不过既然是普通的有名字参数，就可以用来做任何事情，不仅仅是传递参数个数的作用）\n下面的这个例子有名参数就不是传递参数个数了，他是直接当做无名参数的一部分（这么说其实也不好，看个人理解）。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #include #include void printargs(int arg1, ...) /* 输出所有int类型的参数，直到-1结束 */ { va_list ap; int i; va_start(ap, arg1); for (i = arg1; i != -1; i = va_arg(ap, int)) printf(\"%d \", i); va_end(ap); putchar('n'); } int main(void) { printargs(5, 2, 14, 84, 97, 15, 24, 48, -1); printargs(84, 51, -1); printargs(-1); printargs(1, -1); return 0; } 这个程序产生输出: ",
+  "wordCount" : "1541",
+  "inLanguage": "zh-cn",
+  "datePublished": "2014-01-23T23:55:00+08:00",
+  "dateModified": "2018-04-29T23:12:16+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.zeyes.org/posts/tech/study-c-stdarg/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "问道凌虚",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zeyes.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/tech/">Teches</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      可变参数的使用
+    </h1>
+    <div class="post-meta">
+
+<span title='2014-01-23 23:55:00 +0800 CST'>2014年01月23日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1541 字</span>
+
+</div>
+  </header> 
+
+  <div class="post-content md-content"><p>通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。
+例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">abc</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="err">“</span><span class="o">%</span><span class="n">d</span><span class="o">%</span><span class="n">d</span><span class="err">”</span><span class="p">,</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上两个调用都能正常返回结果。其实他就是一个<strong>可变参数函数</strong>。</p>
+<blockquote>
+<p>可变参数函数是指一个函数拥有不定引数，即是它接受一个可变量目的参数。在C语言中，C标准函式库的stdarg.h标头档定义了提供可变参数函数使用的宏。在C++，应该使用标头档cstdarg。</p>
+</blockquote>
+<p>stdarg.h数据类型</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">类型名称</th>
+					<th style="text-align: left">描述</th>
+					<th style="text-align: left">相容</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">va_list</td>
+					<td style="text-align: left">用来保存宏va_arg与宏va_end所需信息</td>
+					<td style="text-align: left">C89</td>
+			</tr>
+	</tbody>
+</table>
+<p>stdarg.h宏</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">巨集名称</th>
+					<th style="text-align: left">描述</th>
+					<th style="text-align: left">相容</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">va_start</td>
+					<td style="text-align: left">使va_list指向起始的参数</td>
+					<td style="text-align: left">C89</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">va_arg</td>
+					<td style="text-align: left">检索参数</td>
+					<td style="text-align: left">C89</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">va_end</td>
+					<td style="text-align: left">释放va_list</td>
+					<td style="text-align: left">C89</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">va_copy</td>
+					<td style="text-align: left">拷贝va_list的内容</td>
+					<td style="text-align: left">C99</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">函数printf()的声明是这样的：int printf(char *fmt, &hellip;); 后面“&hellip;”表示表示参数表中参数的数量和类型都是可变的。 我们看例子：</td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdarg.h&gt;//必须的头文件</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="nf">average</span><span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="p">,</span> <span class="p">...)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">va_list</span> <span class="n">ap</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">tot</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span> <span class="c1">//使va_list指向起始的参数
+</span></span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">count</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tot</span><span class="o">+=</span><span class="nf">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="kt">double</span><span class="p">);</span> <span class="c1">//检索参数，必须按需要指定类型
+</span></span></span><span class="line"><span class="cl">    <span class="nf">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span> <span class="c1">//释放va_list
+</span></span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">tot</span><span class="o">/</span><span class="n">count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>va_list是一个类型，va_start，va_arg是宏，</p>
+<p>va_start原型：<em>va_start(va_list ap, lastarg);  //lastarg是函数的最后一个有名参数（如果有多个有名参数）。</em>
+va_arg原型：<em>类型 va_arg(va_list ap, 类型);    //在va_arg里面指定什么类型，就返回什么类型</em>
+va_end原型：<em>void va_end(va_list ap);        //释放ap</em></p>
+<p>va_list类型用于声明一个变量（我这里把他写成ap，其实是随意的，就像声明int一样，变量名称当然是随意的），该变量将依次引用各参数。</p>
+<p>我们要用va_start初始化va_list才能正常使用。在上面例子里，参数中包含一个有名参数count，和不知道多少个无名的形参（如果有多个有名的参数，我们要把最右边也就是最后一个有名参数传给va_start，例如double average(int count1，int count2, &hellip;),我们应该这样va_start(ap, count2);）说是初始化，实际上是把va_list指向第一个无名参数。也就是说，ap被初始化为指向第一个无名参数的指针。</p>
+<p>我们接着如何使用，这些没有名字的参数呢。我们可以用va_arg，我们用va_arg来决定返回对象的类型和指针移动的步长。va_arg(ap, double)，指针是ap（用前必须用va_start初始化）,第一次调用它，返回的是第一个无名参数，第二次调用它，返回的是第二个无名参数，以此类推。返回的参数，在形参上是用“&hellip;”代替的，每次调用va_arg必须指定一个返回的类型，例如上面的double。</p>
+<p>我们在调用完可变参数后,应该使用va_end做一些必要的清理工作，例如va_end(ap);</p>
+<p>（提示：我们看count这个参数是有名字的，既然有名字，我们就可以用它做一些工作，在上面的例子，他就是用来传递参数的个数，不过既然是普通的有名字参数，就可以用来做任何事情，不仅仅是传递参数个数的作用）</p>
+<p>下面的这个例子有名参数就不是传递参数个数了，他是直接当做无名参数的一部分（这么说其实也不好，看个人理解）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdarg.h&gt; </span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printargs</span><span class="p">(</span><span class="kt">int</span> <span class="n">arg1</span><span class="p">,</span> <span class="p">...)</span> <span class="cm">/* 输出所有int类型的参数，直到-1结束 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">va_list</span> <span class="n">ap</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="n">arg1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">arg1</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="nf">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span> <span class="kt">int</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">putchar</span><span class="p">(</span><span class="sc">&#39;n&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printargs</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printargs</span><span class="p">(</span><span class="mi">84</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printargs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printargs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个程序产生输出:
+<img loading="lazy" src="/assets/tech/2014-01-23/printargs.png" title="输出结果"></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/study-c-dijkstra/">
+    <span class="title">« 上一页</span>
+    <span>Dijkstra算法的C语言实现</span>
+  </a>
+  <a class="next" href="https://www.zeyes.org/posts/tech/study-c-scanf/">
+    <span class="title">下一页 »</span>
+    <span>使用字符串输入</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

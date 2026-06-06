@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OJ on 问道凌虚</title>
+    <link>https://www.zeyes.org/tags/oj/</link>
+    <description>Recent content in OJ on 问道凌虚</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans-CN</language>
+    <lastBuildDate>Sun, 29 Apr 2018 20:50:19 +0800</lastBuildDate>
+    <atom:link href="https://www.zeyes.org/tags/oj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDU 1004 Let the Balloon Rise</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1004/</link>
+      <pubDate>Mon, 06 Jul 2015 20:50:19 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1004/</guid>
+      <description>&lt;h2 id=&#34;let-the-balloon-rise&#34;&gt;Let the Balloon Rise&lt;/h2&gt;
+&lt;p&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges&amp;rsquo; favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result.&lt;/p&gt;
+&lt;p&gt;This year, they decide to leave this lovely job to you.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1003 Max Sum</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1003/</link>
+      <pubDate>Sun, 05 Jul 2015 20:45:38 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1003/</guid>
+      <description>&lt;h2 id=&#34;max-sum&#34;&gt;Max Sum&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;Given a sequence a[1],a[2],a[3]&amp;hellip;&amp;hellip;a[n], your job is to calculate the max sum of a sub-sequence. For example, given (6,-1,5,4,-7), the max sum in this sequence is 6 + (-1) + 5 + 4 = 14.&lt;/p&gt;
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input contains an integer T(1&amp;lt;=T&amp;lt;=20) which means the number of test cases. Then T lines follow, each line starts with a number N(1&amp;lt;=N&amp;lt;=100000), then N integers followed(all the integers are between -1000 and 1000).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDU 1002 A &#43; B Problem II</title>
+      <link>https://www.zeyes.org/posts/tech/hdu-1002/</link>
+      <pubDate>Sat, 04 Jul 2015 20:39:18 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1002/</guid>
+      <description>&lt;h2 id=&#34;a--b-problem-ii&#34;&gt;A + B Problem II&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
+Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;problem-description&#34;&gt;Problem Description&lt;/h3&gt;
+&lt;p&gt;I have a very simple problem for you. Given two integers A and B, your job is to calculate the Sum of A + B.&lt;/p&gt;
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The first line of the input contains an integer T(1&amp;lt;=T&amp;lt;=20) which means the number of test cases. Then T lines follow, each line consists of two positive integers, A and B. Notice that the integers are very large, that means you should not process them by using 32-bit integer. You may assume the length of each integer will not exceed 1000.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>POJ 1804 Brainman</title>
+      <link>https://www.zeyes.org/posts/tech/poj-1804/</link>
+      <pubDate>Tue, 23 Jun 2015 20:11:42 +0800</pubDate>
+      <guid>https://www.zeyes.org/posts/tech/poj-1804/</guid>
+      <description>&lt;h1 id=&#34;brainman&#34;&gt;Brainman&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Time Limit: 1000MS Memory Limit: 30000K
+Total Submissions: 8755 Accepted: 4723&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;h4 id=&#34;background&#34;&gt;Background&lt;/h4&gt;
+&lt;p&gt;Raymond Babbitt drives his brother Charlie mad. Recently Raymond counted 246 toothpicks spilled all over the floor in an instant just by glancing at them. And he can even count Poker cards. Charlie would love to be able to do cool things like that, too. He wants to beat his brother in a similar task.&lt;/p&gt;
+&lt;h4 id=&#34;problem&#34;&gt;Problem&lt;/h4&gt;
+&lt;p&gt;Here&amp;rsquo;s what Charlie thinks of. Imagine you get a sequence of N numbers. The goal is to move the numbers around so that at the end the sequence is ordered. The only operation allowed is to swap two adjacent numbers. Let us try an example:
+Start with: 2 8 0 3
+swap (2 8) 8 2 0 3
+swap (2 0) 8 0 2 3
+swap (2 3) 8 0 3 2
+swap (8 0) 0 8 3 2
+swap (8 3) 0 3 8 2
+swap (8 2) 0 3 2 8
+swap (3 2) 0 2 3 8
+swap (3 8) 0 2 8 3
+swap (8 3) 0 2 3 8&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

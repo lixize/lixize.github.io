@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Eclipse Neon配置Mysql | 问道凌虚</title>
+<meta name="keywords" content="学习, 日常配置, Java">
+<meta name="description" content="1# 要下载的资料
+MySQL Connector/J 6.0
+下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip
+查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/
+2# 解压文件
+解压mysql-connector-java-6.0.6.zip，可得如下文件：
+">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/eclipse-mysql/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/eclipse-mysql/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+</noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/eclipse-mysql/">
+  <meta property="og:site_name" content="问道凌虚">
+  <meta property="og:title" content="Eclipse Neon配置Mysql">
+  <meta property="og:description" content="1# 要下载的资料 MySQL Connector/J 6.0 下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip 查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/
+2# 解压文件 解压mysql-connector-java-6.0.6.zip，可得如下文件：">
+  <meta property="og:locale" content="zh_Hans_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2017-06-15T16:13:00+08:00">
+    <meta property="article:modified_time" content="2018-04-29T22:21:16+08:00">
+    <meta property="article:tag" content="学习">
+    <meta property="article:tag" content="日常配置">
+    <meta property="article:tag" content="Java">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Eclipse Neon配置Mysql">
+  <meta name="twitter:description" content="1# 要下载的资料 MySQL Connector/J 6.0 下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip 查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/
+2# 解压文件 解压mysql-connector-java-6.0.6.zip，可得如下文件：">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://www.zeyes.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Eclipse Neon配置Mysql",
+      "item": "https://www.zeyes.org/posts/tech/eclipse-mysql/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Eclipse Neon配置Mysql",
+  "name": "Eclipse Neon配置Mysql",
+  "description": "1# 要下载的资料 MySQL Connector/J 6.0 下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip 查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/\n2# 解压文件 解压mysql-connector-java-6.0.6.zip，可得如下文件： ",
+  "keywords": [
+    "学习", "日常配置", "Java"
+  ],
+  "articleBody": "1# 要下载的资料 MySQL Connector/J 6.0 下载网址：https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip 查看最新版本下载链接：https://dev.mysql.com/downloads/connector/j/\n2# 解压文件 解压mysql-connector-java-6.0.6.zip，可得如下文件： 3# 放置文件 假如在D盘创建一个文件夹java，然后在java文件夹里面创建jdbc-drivers文件夹，将mysql-connector-java-6.0.6-bin.jar放入此文件夹。 可以得到此文件的路径，记住这个文件的位置，下面还需要用到。 D:\\java\\jdbc-drivers\\mysql-connector-java-6.0.6-bin.jar 其实文件路径是随意的，放在一个可以找得到的文件夹就可以了。\n4# 在Eclipse上配置mysql库文件 打开Eclipse在菜单里找到Window–\u003ePreferences打开 在设置界面里面找到Java–\u003eBuild Path–\u003eUser Libraries，打开如图所示： 点击New新建，在输入框输入jdbc，然后下面的System library勾上。 5# 导入jar包 接下类点击Add External JARs，将刚才的mysql-connector-java-6.0.6-bin.jar这个文件选中，然后最后OK保存设置就可以了。 6# 在Eclipse项目上使用Mysql库文件 在项目上右键弹出菜单选择Build Path然后选择Add Libraries 然后在弹出的选项中选则，User Libraries，接着勾选jdbc这个库，最后点Finsh完成就可以成功在项目中使用mysql进行连接数据库了。 7# 测试运行 注意：6.0版本的MySQL Connector/J 6.0与之前的版本有很大区别，不兼容。\n可以查看官方文档：https://dev.mysql.com/doc/connector-j/6.0/en/\n",
+  "wordCount" : "792",
+  "inLanguage": "zh-cn",
+  "datePublished": "2017-06-15T16:13:00+08:00",
+  "dateModified": "2018-04-29T22:21:16+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.zeyes.org/posts/tech/eclipse-mysql/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "问道凌虚",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zeyes.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="https://www.zeyes.org/" title="🏠 主页">
+                    <span>🏠 主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                    <span>🔍 搜索</span>
+                </a>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                    <span>📁 分类</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
+                            <span>💻 技术</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
+                            <span>📈 股票</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
+                            <span>📝 随笔</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
+                    <span>🏷️ 标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
+                    <span>📦 归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
+                    <span>💡 关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">主页</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/posts/tech/">Teches</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
+      Eclipse Neon配置Mysql
+    </h1>
+    <div class="post-meta">
+
+<span title='2017-06-15 16:13:00 +0800 CST'>2017年06月15日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>792 字</span>
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#1-%e8%a6%81%e4%b8%8b%e8%bd%bd%e7%9a%84%e8%b5%84%e6%96%99" aria-label="1# 要下载的资料">1# 要下载的资料</a></li>
+                    <li>
+                        <a href="#2-%e8%a7%a3%e5%8e%8b%e6%96%87%e4%bb%b6" aria-label="2# 解压文件">2# 解压文件</a></li>
+                    <li>
+                        <a href="#3-%e6%94%be%e7%bd%ae%e6%96%87%e4%bb%b6" aria-label="3# 放置文件">3# 放置文件</a></li>
+                    <li>
+                        <a href="#4-%e5%9c%a8eclipse%e4%b8%8a%e9%85%8d%e7%bd%aemysql%e5%ba%93%e6%96%87%e4%bb%b6" aria-label="4# 在Eclipse上配置mysql库文件">4# 在Eclipse上配置mysql库文件</a></li>
+                    <li>
+                        <a href="#5-%e5%af%bc%e5%85%a5jar%e5%8c%85" aria-label="5# 导入jar包">5# 导入jar包</a></li>
+                    <li>
+                        <a href="#7-%e6%b5%8b%e8%af%95%e8%bf%90%e8%a1%8c" aria-label="7# 测试运行">7# 测试运行</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    
+    document.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+    
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        if (elements.length > 0) {
+            
+            activeElement = elements[0];
+            const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+            document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+        }
+    
+        
+        const topLink = document.getElementById('top-link');
+        if (topLink) {
+            topLink.addEventListener('click', (event) => {
+                
+                event.preventDefault();
+    
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    }, false);
+    
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+    
+    window.addEventListener('scroll', () => {
+        
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+        
+        if (scrollPosition === 0) {
+            return;
+        }
+    
+        
+        if (elements && elements.length > 0) {
+            
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - scrollPosition) > 0 && 
+                    (getOffsetTop(element) - scrollPosition) < window.innerHeight / 2) {
+                    return element;
+                }
+            }) || activeElement;
+    
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                const tocLink = document.querySelector(`.inner ul li a[href="#${id}"]`);
+                if (element === activeElement){
+                    tocLink.classList.add('active');
+    
+                    
+                    const tocContainer = document.querySelector('.toc .inner');
+                    const linkOffsetTop = tocLink.offsetTop;
+                    const containerHeight = tocContainer.clientHeight;
+                    const linkHeight = tocLink.clientHeight;
+    
+                    
+                    const scrollPosition = linkOffsetTop - (containerHeight / 2) + (linkHeight / 2);
+                    tocContainer.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+                } else {
+                    tocLink.classList.remove('active');
+                }
+            });
+        }
+    }, false);
+    
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+    
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+    
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+    
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+    
+</script>
+
+  <div class="post-content md-content"><h3 id="1-要下载的资料">1# 要下载的资料<a hidden class="anchor" aria-hidden="true" href="#1-要下载的资料">#</a></h3>
+<p>MySQL Connector/J 6.0
+下载网址：<a href="https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip">https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip</a>
+查看最新版本下载链接：<a href="https://dev.mysql.com/downloads/connector/j/">https://dev.mysql.com/downloads/connector/j/</a></p>
+<h3 id="2-解压文件">2# 解压文件<a hidden class="anchor" aria-hidden="true" href="#2-解压文件">#</a></h3>
+<p>解压mysql-connector-java-6.0.6.zip，可得如下文件：
+<img loading="lazy" src="/assets/tech/2017-06-15/63546416.png"></p>
+<h3 id="3-放置文件">3# 放置文件<a hidden class="anchor" aria-hidden="true" href="#3-放置文件">#</a></h3>
+<p>假如在D盘创建一个文件夹java，然后在java文件夹里面创建jdbc-drivers文件夹，将mysql-connector-java-6.0.6-bin.jar放入此文件夹。
+可以得到此文件的路径，记住这个文件的位置，下面还需要用到。
+D:\java\jdbc-drivers\mysql-connector-java-6.0.6-bin.jar
+其实文件路径是随意的，放在一个可以找得到的文件夹就可以了。</p>
+<h3 id="4-在eclipse上配置mysql库文件">4# 在Eclipse上配置mysql库文件<a hidden class="anchor" aria-hidden="true" href="#4-在eclipse上配置mysql库文件">#</a></h3>
+<p>打开Eclipse在菜单里找到Window&ndash;&gt;Preferences打开
+<img loading="lazy" src="/assets/tech/2017-06-15/456465464.png"></p>
+<p>在设置界面里面找到Java&ndash;&gt;Build Path&ndash;&gt;User Libraries，打开如图所示：
+<img loading="lazy" src="/assets/tech/2017-06-15/654646416.png"></p>
+<p>点击New新建，在输入框输入jdbc，然后下面的System library勾上。
+<img loading="lazy" src="/assets/tech/2017-06-15/41654164164.png"></p>
+<h3 id="5-导入jar包">5# 导入jar包<a hidden class="anchor" aria-hidden="true" href="#5-导入jar包">#</a></h3>
+<p>接下类点击Add External JARs，将刚才的mysql-connector-java-6.0.6-bin.jar这个文件选中，然后最后OK保存设置就可以了。
+<img loading="lazy" src="/assets/tech/2017-06-15/QQ%E6%88%AA%E5%9B%BE20170615160713.png"></p>
+<p>6# 在Eclipse项目上使用Mysql库文件
+在项目上右键弹出菜单选择Build Path然后选择Add Libraries
+<img loading="lazy" src="/assets/tech/2017-06-15/54654641648.png"></p>
+<p>然后在弹出的选项中选则，User Libraries，接着勾选jdbc这个库，最后点Finsh完成就可以成功在项目中使用mysql进行连接数据库了。
+<img loading="lazy" src="/assets/tech/2017-06-15/QQ%E6%88%AA%E5%9B%BE20170615160845.png"></p>
+<h3 id="7-测试运行">7# 测试运行<a hidden class="anchor" aria-hidden="true" href="#7-测试运行">#</a></h3>
+<p><img loading="lazy" src="/assets/tech/2017-06-15/4998749464697.png"></p>
+<p>注意：6.0版本的MySQL Connector/J 6.0与之前的版本有很大区别，不兼容。</p>
+<p>可以查看官方文档：<a href="https://dev.mysql.com/doc/connector-j/6.0/en/">https://dev.mysql.com/doc/connector-j/6.0/en/</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E9%85%8D%E7%BD%AE/">日常配置</a></li>
+      <li><a href="https://www.zeyes.org/tags/java/">Java</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/">
+    <span class="title">« 上一页</span>
+    <span>解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</span>
+  </a>
+  <a class="next" href="https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/">
+    <span class="title">下一页 »</span>
+    <span>CodeBlocks 16.01&#43;wxWidgets 3.03配置</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-beian")) return;
+
+        const powered = footer.querySelector("span:last-of-type");
+        const beianItems = [
+            {
+                text: "粤ICP备16026024号-1",
+                href: "https://beian.miit.gov.cn/"
+            },
+        ];
+
+        beianItems.forEach((item) => {
+            const beian = document.createElement("span");
+            beian.className = "footer-beian";
+
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = item.text;
+            beian.append(link);
+
+            if (powered) {
+                powered.before(beian, document.createTextNode(" · "));
+            } else {
+                footer.append(document.createTextNode(" · "), beian);
+            }
+        });
+    })();
+</script>
+
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
