@@ -203,6 +203,22 @@
 </header>
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">使用字符串输入
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。
+代码如下：
+1 2 3 4 5 6 7 8 9 #include &lt;stdio.h&gt;; int main(void) { char word[40]; printf(&#34;请输入一个英文句子n&#34;); scanf(&#34;%s&#34;, word); printf(&#34;%sn&#34;, word); return 0; } 编译运行，输入一个英文句子，比如Zeyes Studio，接着便输出Zeyes
+</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2014-01-21 00:06:00 +0800 CST'>2014年01月21日</span>&nbsp;·&nbsp;<span>1 分钟</span>&nbsp;·&nbsp;<span>158 字</span></footer>
+  <a class="entry-link" aria-label="post link to 使用字符串输入" href="https://lixize.github.io/posts/tech/study-c-scanf/"></a>
+</article>
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">【2014端午纪念版】抽签系统3.25-Final
     </h2>
   </header>

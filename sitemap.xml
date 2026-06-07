@@ -3,31 +3,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lixize.github.io/tags/hugo/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/posts/tech/hugo-papermod-customization/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/tags/papermod/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/tags/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/posts/tech/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/tags/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://lixize.github.io/</loc>
+    <lastmod>2026-06-07T16:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://lixize.github.io/posts/</loc>
     <lastmod>2026-06-07T01:11:00+08:00</lastmod>
   </url><url>
     <loc>https://lixize.github.io/posts/test-shortcode/</loc>
     <lastmod>2026-06-07T01:11:00+08:00</lastmod>
   </url><url>
-    <loc>https://lixize.github.io/</loc>
-    <lastmod>2026-06-07T01:11:00+08:00</lastmod>
-  </url><url>
     <loc>https://lixize.github.io/tags/chroma/</loc>
     <lastmod>2026-06-07T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://lixize.github.io/tags/hugo/</loc>
-    <lastmod>2026-06-07T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://lixize.github.io/tags/papermod/</loc>
-    <lastmod>2026-06-07T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</loc>
-    <lastmod>2026-06-07T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://lixize.github.io/tags/</loc>
-    <lastmod>2026-06-07T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://lixize.github.io/posts/tech/</loc>
     <lastmod>2026-06-07T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://lixize.github.io/tags/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/</loc>
@@ -61,9 +70,6 @@
     <lastmod>2018-04-30T18:54:13+08:00</lastmod>
   </url><url>
     <loc>https://lixize.github.io/posts/tech/install-hexo-and-next/</loc>
-    <lastmod>2018-04-30T18:54:13+08:00</lastmod>
-  </url><url>
-    <loc>https://lixize.github.io/tags/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/</loc>
     <lastmod>2018-04-30T18:54:13+08:00</lastmod>
   </url><url>
     <loc>https://lixize.github.io/posts/tech/study-eclipse-jsp-auto-close/</loc>
