@@ -19,16 +19,16 @@ int abc(int a, int b, int c);
 
 若是想调用abc()这个函数，必须传给他三个实参，函数才能正常执行。但是，我想调用一个函数，他的参数个数不确定呢？比如我们经常用的printf()，想在屏幕上打印一些东西。很多时候，参数个数都是不一样的，例如：">
 <meta name="author" content="">
-<link rel="canonical" href="https://lixize.github.io/posts/tech/study-c-stdarg/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.7dfbc73d0bba07ae4e738bec3cc6d2331f4978d697dac4d6a45ef51b0ad0f9ae.css" integrity="sha256-ffvHPQu6B65Oc4vsPMbSMx9JeNaX2sTWpF71GwrQ&#43;a4=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://lixize.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://lixize.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://lixize.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://lixize.github.io/apple-touch-icon-next.png">
-<link rel="mask-icon" href="https://lixize.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="https://www.zeyes.org/posts/tech/study-c-stdarg/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.60b29e5d6957acf67b52ee21cb6680ac191172ecf64c65b19d2d34b2ddd55bec.css" integrity="sha256-YLKeXWlXrPZ7Uu4hy2aArBkRcuz2TGWxnS00st3VW&#43;w=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.zeyes.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zeyes.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zeyes.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.zeyes.org/apple-touch-icon-next.png">
+<link rel="mask-icon" href="https://www.zeyes.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh-cn" href="https://lixize.github.io/posts/tech/study-c-stdarg/">
+<link rel="alternate" hreflang="zh-cn" href="https://www.zeyes.org/posts/tech/study-c-stdarg/">
 <noscript>
     <style>
         #theme-toggle,
@@ -84,7 +84,7 @@ int abc(int a, int b, int c);
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
 </noscript>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap">
-<meta property="og:url" content="https://lixize.github.io/posts/tech/study-c-stdarg/">
+<meta property="og:url" content="https://www.zeyes.org/posts/tech/study-c-stdarg/">
   <meta property="og:site_name" content="问道凌虚">
   <meta property="og:title" content="可变参数的使用">
   <meta property="og:description" content="通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。 例如：
@@ -112,13 +112,13 @@ int abc(int a, int b, int c);
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://lixize.github.io/posts/"
+      "item": "https://www.zeyes.org/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  3 ,
       "name": "可变参数的使用",
-      "item": "https://lixize.github.io/posts/tech/study-c-stdarg/"
+      "item": "https://www.zeyes.org/posts/tech/study-c-stdarg/"
     }
   ]
 }
@@ -140,14 +140,14 @@ int abc(int a, int b, int c);
   "dateModified": "2018-04-29T23:12:16+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://lixize.github.io/posts/tech/study-c-stdarg/"
+    "@id": "https://www.zeyes.org/posts/tech/study-c-stdarg/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "问道凌虚",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://lixize.github.io/favicon.ico"
+      "url": "https://www.zeyes.org/favicon.ico"
     }
   }
 }
@@ -157,7 +157,7 @@ int abc(int a, int b, int c);
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="https://lixize.github.io/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
+            <a href="https://www.zeyes.org/" accesskey="h" title="问道凌虚 (Alt + H)">问道凌虚</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -183,49 +183,49 @@ int abc(int a, int b, int c);
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="https://lixize.github.io/" title="🏠 主页">
+                <a href="https://www.zeyes.org/" title="🏠 主页">
                     <span>🏠 主页</span>
                 </a>
             </li>
             <li>
-                <a href="https://lixize.github.io/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
+                <a href="https://www.zeyes.org/search/" title="🔍 搜索 (Alt &#43; /)" accesskey=/>
                     <span>🔍 搜索</span>
                 </a>
             </li>
             <li class="menu-item-has-children">
-                <a href="https://lixize.github.io/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
+                <a href="https://www.zeyes.org/topics/" class="menu-trigger" title="📁 分类" aria-haspopup="true">
                     <span>📁 分类</span>
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="https://lixize.github.io/topics/tech/" title="💻 技术">
+                        <a href="https://www.zeyes.org/topics/tech/" title="💻 技术">
                             <span>💻 技术</span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://lixize.github.io/topics/stock/" title="📈 股票">
+                        <a href="https://www.zeyes.org/topics/stock/" title="📈 股票">
                             <span>📈 股票</span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://lixize.github.io/topics/essay/" title="📝 随笔">
+                        <a href="https://www.zeyes.org/topics/essay/" title="📝 随笔">
                             <span>📝 随笔</span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="https://lixize.github.io/tags/" title="🏷️ 标签">
+                <a href="https://www.zeyes.org/tags/" title="🏷️ 标签">
                     <span>🏷️ 标签</span>
                 </a>
             </li>
             <li>
-                <a href="https://lixize.github.io/archives/" title="📦 归档">
+                <a href="https://www.zeyes.org/archives/" title="📦 归档">
                     <span>📦 归档</span>
                 </a>
             </li>
             <li>
-                <a href="https://lixize.github.io/about/" title="💡 关于">
+                <a href="https://www.zeyes.org/about/" title="💡 关于">
                     <span>💡 关于</span>
                 </a>
             </li>
@@ -253,7 +253,7 @@ int abc(int a, int b, int c);
     </h1>
     <div class="post-meta">
 
-<span title='2014-01-23 23:55:00 +0800 CST'>2014年01月23日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1541 字</span>
+<span title='2014-01-23 23:55:00 +0800 CST'>2014年01月23日</span>&nbsp;·&nbsp;<span title='2018-04-29 23:12:16 +0800 CST'>更新于2018年04月29日</span>&nbsp;·&nbsp;<span>4 分钟</span>&nbsp;·&nbsp;<span>1541 字</span>&nbsp;·&nbsp;<span id="busuanzi_container_page_pv">阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
 
 </div>
   </header> 
@@ -431,15 +431,15 @@ va_end原型：<em>void va_end(va_list ap);        //释放ap</em></p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://lixize.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
-      <li><a href="https://lixize.github.io/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></li>
+      <li><a href="https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/">学习</a></li>
+      <li><a href="https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/">C语言</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://lixize.github.io/posts/tech/study-c-dijkstra/">
+  <a class="prev" href="https://www.zeyes.org/posts/tech/study-c-dijkstra/">
     <span class="title">« 上一页</span>
     <span>Dijkstra算法的C语言实现</span>
   </a>
-  <a class="next" href="https://lixize.github.io/posts/tech/study-c-scanf/">
+  <a class="next" href="https://www.zeyes.org/posts/tech/study-c-scanf/">
     <span class="title">下一页 »</span>
     <span>使用字符串输入</span>
   </a>
@@ -464,7 +464,7 @@ va_end原型：<em>void va_end(va_list ap);        //释放ap</em></p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="https://lixize.github.io/">问道凌虚</a></span> · 
+        <span>&copy; 2026 <a href="https://www.zeyes.org/">问道凌虚</a></span> · 
 
     
     
@@ -513,6 +513,23 @@ va_end原型：<em>void va_end(va_list ap);        //释放ap</em></p>
         });
     })();
 </script>
+
+<script>
+    (() => {
+        const footer = document.querySelector(".footer");
+        if (!footer || footer.querySelector(".footer-busuanzi")) return;
+
+        const stats = document.createElement("div");
+        stats.className = "footer-busuanzi";
+        stats.innerHTML = [
+            '<span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>',
+            '<span id="busuanzi_container_site_uv">本站访客数 <span id="busuanzi_value_site_uv"></span> 人</span>'
+        ].join(" · ");
+
+        footer.prepend(stats);
+    })();
+</script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 <script>

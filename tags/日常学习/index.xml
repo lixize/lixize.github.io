@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>日常学习 on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 日常学习 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sat, 05 May 2018 20:43:23 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微信小游戏《萌宠变变变》模拟点击开发</title>
-      <link>https://lixize.github.io/posts/tech/wx-game-dogbian/</link>
+      <link>https://www.zeyes.org/posts/tech/wx-game-dogbian/</link>
       <pubDate>Sat, 05 May 2018 20:43:23 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/wx-game-dogbian/</guid>
+      <guid>https://www.zeyes.org/posts/tech/wx-game-dogbian/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;每当在屏幕点击宠物的时候，金钱的方法就会额外增加，同时心跳包会带上点击的宠物ID和点击次数发给服务器。
 所以，可以使用HttpClient来模拟心跳包来实现金钱的额外增长，实际加的很少，但也好过没有。&lt;/p&gt;
@@ -20,17 +20,17 @@
     </item>
     <item>
       <title>Java工具类Observable源码解析与使用</title>
-      <link>https://lixize.github.io/posts/tech/java-learn-observable/</link>
+      <link>https://www.zeyes.org/posts/tech/java-learn-observable/</link>
       <pubDate>Sat, 05 May 2018 14:46:56 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/java-learn-observable/</guid>
+      <guid>https://www.zeyes.org/posts/tech/java-learn-observable/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;很多地方，我们需要使用观察者设计模式，而Java内部有提供了这样的一个类。通过继承Observable类和实现Observer接口，就可以省下一些代码，不用我们自己去实现这些代码。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java工具类Timer源码解析与使用</title>
-      <link>https://lixize.github.io/posts/tech/java-learn-timer/</link>
+      <link>https://www.zeyes.org/posts/tech/java-learn-timer/</link>
       <pubDate>Sat, 05 May 2018 01:46:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/java-learn-timer/</guid>
+      <guid>https://www.zeyes.org/posts/tech/java-learn-timer/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;通常我们需要定时执行一些任务，这时候可以使用Timer来完成，准确来说是Timer和TimerTask两个类配合完成。Timer是一个工具类，而TimerTask是一个抽象类，实现了Runnable接口。通过继承TimerTask可以定制我们自己的任务，并将我们自己的TimerTask加入Timer中。
 Timer内部会调用TimerTask的run方法来执行业务流程。&lt;/p&gt;</description>

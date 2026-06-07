@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>算法 on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://www.zeyes.org/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Mon, 30 Apr 2018 00:15:57 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeBlocks 16.01&#43;wxWidgets 3.03配置</title>
-      <link>https://lixize.github.io/posts/tech/configured-codeblocks-wxwidgets-303/</link>
+      <link>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</link>
       <pubDate>Wed, 07 Jun 2017 01:35:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
+      <guid>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
       <description>&lt;h3 id=&#34;1-下载codeblocks-1601和wxwidgets-303&#34;&gt;1# 下载CodeBlocks 16.01和wxWidgets 3.0.3&lt;/h3&gt;
 &lt;p&gt;CodeBlocks 16.01 下载地址：&lt;a href=&#34;http://www.codeblocks.org/downloads/&#34;&gt;http://www.codeblocks.org/downloads/&lt;/a&gt;
 wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/downloads/&#34;&gt;https://www.wxwidgets.org/downloads/&lt;/a&gt;&lt;/p&gt;
@@ -20,9 +20,9 @@ wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/download
     </item>
     <item>
       <title>HDU 1004 Let the Balloon Rise</title>
-      <link>https://lixize.github.io/posts/tech/hdu-1004/</link>
+      <link>https://www.zeyes.org/posts/tech/hdu-1004/</link>
       <pubDate>Mon, 06 Jul 2015 20:50:19 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/hdu-1004/</guid>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1004/</guid>
       <description>&lt;h2 id=&#34;let-the-balloon-rise&#34;&gt;Let the Balloon Rise&lt;/h2&gt;
 &lt;p&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
@@ -32,9 +32,9 @@ Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1003 Max Sum</title>
-      <link>https://lixize.github.io/posts/tech/hdu-1003/</link>
+      <link>https://www.zeyes.org/posts/tech/hdu-1003/</link>
       <pubDate>Sun, 05 Jul 2015 20:45:38 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/hdu-1003/</guid>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1003/</guid>
       <description>&lt;h2 id=&#34;max-sum&#34;&gt;Max Sum&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
@@ -45,9 +45,9 @@ Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1002 A &#43; B Problem II</title>
-      <link>https://lixize.github.io/posts/tech/hdu-1002/</link>
+      <link>https://www.zeyes.org/posts/tech/hdu-1002/</link>
       <pubDate>Sat, 04 Jul 2015 20:39:18 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/hdu-1002/</guid>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1002/</guid>
       <description>&lt;h2 id=&#34;a--b-problem-ii&#34;&gt;A + B Problem II&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
@@ -58,9 +58,9 @@ Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>归并排序(Merge Sort)</title>
-      <link>https://lixize.github.io/posts/tech/c-merge-sort-learn/</link>
+      <link>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</link>
       <pubDate>Wed, 24 Jun 2015 20:33:32 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/c-merge-sort-learn/</guid>
+      <guid>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;归并排序&lt;/strong&gt;是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（&lt;em&gt;当然这个是比较业余的说法，如果想得到准确答案，问度娘。&lt;/em&gt;）归并排序的时间复杂度为&lt;strong&gt;O(nlgn)&lt;/strong&gt;，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -77,38 +77,38 @@ Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>选择排序（Selection Sort）</title>
-      <link>https://lixize.github.io/posts/tech/c-selection-sort-learn/</link>
+      <link>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</link>
       <pubDate>Sun, 21 Jun 2015 20:03:48 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/c-selection-sort-learn/</guid>
+      <guid>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</guid>
       <description>&lt;strong&gt;选择排序&lt;/strong&gt;是经典排序的一种，最差的时间复杂度为&lt;strong&gt;O(n^2&lt;/strong&gt;)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。</description>
     </item>
     <item>
       <title>插入排序的C语言实现</title>
-      <link>https://lixize.github.io/posts/tech/c-insert-sort-learn/</link>
+      <link>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</link>
       <pubDate>Sat, 20 Jun 2015 15:08:08 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/c-insert-sort-learn/</guid>
+      <guid>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</guid>
       <description>&lt;strong&gt;插入排序&lt;/strong&gt;，稳定排序的一种,&lt;strong&gt;平均时间复杂度为O(n^2)&lt;/strong&gt;,它的代码量很小，对于处理小数据的排序还是可以的。
 排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。</description>
     </item>
     <item>
       <title>Kruskal算法的C语言实现（并查集版）</title>
-      <link>https://lixize.github.io/posts/tech/study-c-kruskal/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-kruskal/</link>
       <pubDate>Sun, 23 Feb 2014 00:07:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-kruskal/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-kruskal/</guid>
       <description>Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。</description>
     </item>
     <item>
       <title>Prim算法的C语言实现</title>
-      <link>https://lixize.github.io/posts/tech/study-c-prim/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-prim/</link>
       <pubDate>Sat, 01 Feb 2014 14:54:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-prim/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-prim/</guid>
       <description>普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</description>
     </item>
     <item>
       <title>Dijkstra算法的C语言实现</title>
-      <link>https://lixize.github.io/posts/tech/study-c-dijkstra/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-dijkstra/</link>
       <pubDate>Sun, 26 Jan 2014 17:00:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-dijkstra/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-dijkstra/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。&lt;/p&gt;</description>
     </item>

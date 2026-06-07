@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>OJ on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/oj/</link>
+    <link>https://www.zeyes.org/tags/oj/</link>
     <description>Recent content in OJ on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 29 Apr 2018 20:50:19 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/oj/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/oj/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HDU 1004 Let the Balloon Rise</title>
-      <link>https://lixize.github.io/posts/tech/hdu-1004/</link>
+      <link>https://www.zeyes.org/posts/tech/hdu-1004/</link>
       <pubDate>Mon, 06 Jul 2015 20:50:19 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/hdu-1004/</guid>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1004/</guid>
       <description>&lt;h2 id=&#34;let-the-balloon-rise&#34;&gt;Let the Balloon Rise&lt;/h2&gt;
 &lt;p&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
@@ -22,9 +22,9 @@ Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1003 Max Sum</title>
-      <link>https://lixize.github.io/posts/tech/hdu-1003/</link>
+      <link>https://www.zeyes.org/posts/tech/hdu-1003/</link>
       <pubDate>Sun, 05 Jul 2015 20:45:38 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/hdu-1003/</guid>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1003/</guid>
       <description>&lt;h2 id=&#34;max-sum&#34;&gt;Max Sum&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
@@ -35,9 +35,9 @@ Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1002 A &#43; B Problem II</title>
-      <link>https://lixize.github.io/posts/tech/hdu-1002/</link>
+      <link>https://www.zeyes.org/posts/tech/hdu-1002/</link>
       <pubDate>Sat, 04 Jul 2015 20:39:18 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/hdu-1002/</guid>
+      <guid>https://www.zeyes.org/posts/tech/hdu-1002/</guid>
       <description>&lt;h2 id=&#34;a--b-problem-ii&#34;&gt;A + B Problem II&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
@@ -48,9 +48,9 @@ Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>POJ 1804 Brainman</title>
-      <link>https://lixize.github.io/posts/tech/poj-1804/</link>
+      <link>https://www.zeyes.org/posts/tech/poj-1804/</link>
       <pubDate>Tue, 23 Jun 2015 20:11:42 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/poj-1804/</guid>
+      <guid>https://www.zeyes.org/posts/tech/poj-1804/</guid>
       <description>&lt;h1 id=&#34;brainman&#34;&gt;Brainman&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 1000MS Memory Limit: 30000K
 Total Submissions: 8755 Accepted: 4723&lt;/em&gt;&lt;/p&gt;

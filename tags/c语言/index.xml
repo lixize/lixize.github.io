@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>C语言 on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/c%E8%AF%AD%E8%A8%80/</link>
+    <link>https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/</link>
     <description>Recent content in C语言 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Mon, 30 Apr 2018 00:15:57 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/c%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/c%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeBlocks 16.01&#43;wxWidgets 3.03配置</title>
-      <link>https://lixize.github.io/posts/tech/configured-codeblocks-wxwidgets-303/</link>
+      <link>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</link>
       <pubDate>Wed, 07 Jun 2017 01:35:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
+      <guid>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
       <description>&lt;h3 id=&#34;1-下载codeblocks-1601和wxwidgets-303&#34;&gt;1# 下载CodeBlocks 16.01和wxWidgets 3.0.3&lt;/h3&gt;
 &lt;p&gt;CodeBlocks 16.01 下载地址：&lt;a href=&#34;http://www.codeblocks.org/downloads/&#34;&gt;http://www.codeblocks.org/downloads/&lt;/a&gt;
 wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/downloads/&#34;&gt;https://www.wxwidgets.org/downloads/&lt;/a&gt;&lt;/p&gt;
@@ -20,9 +20,9 @@ wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/download
     </item>
     <item>
       <title>归并排序(Merge Sort)</title>
-      <link>https://lixize.github.io/posts/tech/c-merge-sort-learn/</link>
+      <link>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</link>
       <pubDate>Wed, 24 Jun 2015 20:33:32 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/c-merge-sort-learn/</guid>
+      <guid>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;归并排序&lt;/strong&gt;是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（&lt;em&gt;当然这个是比较业余的说法，如果想得到准确答案，问度娘。&lt;/em&gt;）归并排序的时间复杂度为&lt;strong&gt;O(nlgn)&lt;/strong&gt;，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -39,9 +39,9 @@ wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/download
     </item>
     <item>
       <title>POJ 1804 Brainman</title>
-      <link>https://lixize.github.io/posts/tech/poj-1804/</link>
+      <link>https://www.zeyes.org/posts/tech/poj-1804/</link>
       <pubDate>Tue, 23 Jun 2015 20:11:42 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/poj-1804/</guid>
+      <guid>https://www.zeyes.org/posts/tech/poj-1804/</guid>
       <description>&lt;h1 id=&#34;brainman&#34;&gt;Brainman&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 1000MS Memory Limit: 30000K
 Total Submissions: 8755 Accepted: 4723&lt;/em&gt;&lt;/p&gt;
@@ -63,31 +63,31 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>选择排序（Selection Sort）</title>
-      <link>https://lixize.github.io/posts/tech/c-selection-sort-learn/</link>
+      <link>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</link>
       <pubDate>Sun, 21 Jun 2015 20:03:48 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/c-selection-sort-learn/</guid>
+      <guid>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</guid>
       <description>&lt;strong&gt;选择排序&lt;/strong&gt;是经典排序的一种，最差的时间复杂度为&lt;strong&gt;O(n^2&lt;/strong&gt;)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。</description>
     </item>
     <item>
       <title>插入排序的C语言实现</title>
-      <link>https://lixize.github.io/posts/tech/c-insert-sort-learn/</link>
+      <link>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</link>
       <pubDate>Sat, 20 Jun 2015 15:08:08 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/c-insert-sort-learn/</guid>
+      <guid>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</guid>
       <description>&lt;strong&gt;插入排序&lt;/strong&gt;，稳定排序的一种,&lt;strong&gt;平均时间复杂度为O(n^2)&lt;/strong&gt;,它的代码量很小，对于处理小数据的排序还是可以的。
 排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。</description>
     </item>
     <item>
       <title>Kruskal算法的C语言实现（并查集版）</title>
-      <link>https://lixize.github.io/posts/tech/study-c-kruskal/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-kruskal/</link>
       <pubDate>Sun, 23 Feb 2014 00:07:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-kruskal/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-kruskal/</guid>
       <description>Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。</description>
     </item>
     <item>
       <title>浅谈const关键字与指针、define、typedef混用</title>
-      <link>https://lixize.github.io/posts/tech/study-const-define-typedef/</link>
+      <link>https://www.zeyes.org/posts/tech/study-const-define-typedef/</link>
       <pubDate>Sat, 08 Feb 2014 15:19:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-const-define-typedef/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-const-define-typedef/</guid>
       <description>&lt;p&gt;下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -107,33 +107,33 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>Prim算法的C语言实现</title>
-      <link>https://lixize.github.io/posts/tech/study-c-prim/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-prim/</link>
       <pubDate>Sat, 01 Feb 2014 14:54:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-prim/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-prim/</guid>
       <description>普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</description>
     </item>
     <item>
       <title>[转载]数组名与指针</title>
-      <link>https://lixize.github.io/posts/tech/study-c-array/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-array/</link>
       <pubDate>Tue, 28 Jan 2014 21:24:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-array/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-array/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。
 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&amp;quot;深入探索&amp;quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dijkstra算法的C语言实现</title>
-      <link>https://lixize.github.io/posts/tech/study-c-dijkstra/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-dijkstra/</link>
       <pubDate>Sun, 26 Jan 2014 17:00:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-dijkstra/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-dijkstra/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。&lt;/p&gt;</description>
     </item>
     <item>
       <title>可变参数的使用</title>
-      <link>https://lixize.github.io/posts/tech/study-c-stdarg/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-stdarg/</link>
       <pubDate>Thu, 23 Jan 2014 23:55:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-stdarg/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-stdarg/</guid>
       <description>&lt;p&gt;通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。
 例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -148,9 +148,9 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用字符串输入</title>
-      <link>https://lixize.github.io/posts/tech/study-c-scanf/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-scanf/</link>
       <pubDate>Tue, 21 Jan 2014 00:06:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-scanf/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-scanf/</guid>
       <description>&lt;p&gt;scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。&lt;/p&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

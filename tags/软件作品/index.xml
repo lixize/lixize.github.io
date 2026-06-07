@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>软件作品 on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/%E8%BD%AF%E4%BB%B6%E4%BD%9C%E5%93%81/</link>
+    <link>https://www.zeyes.org/tags/%E8%BD%AF%E4%BB%B6%E4%BD%9C%E5%93%81/</link>
     <description>Recent content in 软件作品 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Mon, 30 Apr 2018 00:20:56 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/%E8%BD%AF%E4%BB%B6%E4%BD%9C%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/%E8%BD%AF%E4%BB%B6%E4%BD%9C%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【2014端午纪念版】抽签系统3.25-Final</title>
-      <link>https://lixize.github.io/posts/tech/e-random-number-system/</link>
+      <link>https://www.zeyes.org/posts/tech/e-random-number-system/</link>
       <pubDate>Mon, 20 Jan 2014 13:50:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/e-random-number-system/</guid>
+      <guid>https://www.zeyes.org/posts/tech/e-random-number-system/</guid>
       <description>“2014端午纪念版”抽签系统3.25最终版，是一款面向学生课堂用的趣味抽签应用。</description>
     </item>
   </channel>

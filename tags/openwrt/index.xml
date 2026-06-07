@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>OpenWrt on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/openwrt/</link>
+    <link>https://www.zeyes.org/tags/openwrt/</link>
     <description>Recent content in OpenWrt on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 29 Apr 2018 21:11:13 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>D客户端(中兴802.1X) For OpenWrt</title>
-      <link>https://lixize.github.io/posts/tech/dclient-for-openwrt/</link>
+      <link>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</link>
       <pubDate>Sun, 01 Oct 2017 11:59:58 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/dclient-for-openwrt/</guid>
+      <guid>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;学校用的是中兴802.1X认证，只有通过认证的客户端才能上内网和外网。外网登录天翼校园网才能上网。而官方的中兴802.1X客户端，只能运行在Window平台上，并且不能共享WIFI。因此下决心开发了个OpenWrt版的中兴802.1X客户端，这个客户端不同的是专门为我校写的，所以还带了登录天翼校园网的功能。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>使用OpenVPN对校园网内网穿透</title>
-      <link>https://lixize.github.io/posts/tech/openvpn-nat/</link>
+      <link>https://www.zeyes.org/posts/tech/openvpn-nat/</link>
       <pubDate>Sat, 22 Apr 2017 21:54:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/openvpn-nat/</guid>
+      <guid>https://www.zeyes.org/posts/tech/openvpn-nat/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。
-&lt;img loading=&#34;lazy&#34; src=&#34;https://lixize.github.io/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;00-前言&#34;&gt;#00 前言&lt;/h3&gt;
 &lt;p&gt;最近对穿透学校的内网有需求，于是决定搭建环境。

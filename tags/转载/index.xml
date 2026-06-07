@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>转载 on 问道凌虚</title>
-    <link>https://lixize.github.io/tags/%E8%BD%AC%E8%BD%BD/</link>
+    <link>https://www.zeyes.org/tags/%E8%BD%AC%E8%BD%BD/</link>
     <description>Recent content in 转载 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 29 Apr 2018 23:27:59 +0800</lastBuildDate>
-    <atom:link href="https://lixize.github.io/tags/%E8%BD%AC%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zeyes.org/tags/%E8%BD%AC%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[转载]数组名与指针</title>
-      <link>https://lixize.github.io/posts/tech/study-c-array/</link>
+      <link>https://www.zeyes.org/posts/tech/study-c-array/</link>
       <pubDate>Tue, 28 Jan 2014 21:24:00 +0800</pubDate>
-      <guid>https://lixize.github.io/posts/tech/study-c-array/</guid>
+      <guid>https://www.zeyes.org/posts/tech/study-c-array/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。
 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&amp;quot;深入探索&amp;quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！&lt;/p&gt;</description>
