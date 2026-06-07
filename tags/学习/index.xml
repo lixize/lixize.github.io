@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>学习 on 问道凌虚</title>
-    <link>https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://lixize.github.io/tags/%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 学习 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Mon, 30 Apr 2018 00:09:46 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决用Eclipse EE写JSP代码时，自动括号补全问题</title>
-      <link>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</link>
+      <link>https://lixize.github.io/posts/tech/study-eclipse-jsp-auto-close/</link>
       <pubDate>Sat, 18 Nov 2017 14:43:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-eclipse-jsp-auto-close/</guid>
       <description>&lt;p&gt;这个问题其实是烦恼了挺久的，就我本人而言，通常不用括号补全，我觉得手打比较完整，在学JSP以前，用Eclipse虽然他带括号补全，但是也不影响手打，比如打括号时，不会出现三个括号。
 而JSP的Editor就比较烦人了。比如打&amp;lt;%%&amp;gt;会出现&amp;lt;%%&amp;raquo;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Eclipse Neon配置Mysql</title>
-      <link>https://www.zeyes.org/posts/tech/eclipse-mysql/</link>
+      <link>https://lixize.github.io/posts/tech/eclipse-mysql/</link>
       <pubDate>Thu, 15 Jun 2017 16:13:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/eclipse-mysql/</guid>
+      <guid>https://lixize.github.io/posts/tech/eclipse-mysql/</guid>
       <description>&lt;h3 id=&#34;1-要下载的资料&#34;&gt;1# 要下载的资料&lt;/h3&gt;
 &lt;p&gt;MySQL Connector/J 6.0
 下载网址：&lt;a href=&#34;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&#34;&gt;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&lt;/a&gt;
 查看最新版本下载链接：&lt;a href=&#34;https://dev.mysql.com/downloads/connector/j/&#34;&gt;https://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-解压文件&#34;&gt;2# 解压文件&lt;/h3&gt;
 &lt;p&gt;解压mysql-connector-java-6.0.6.zip，可得如下文件：
-&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-06-15/63546416.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;https://lixize.github.io/assets/tech/2017-06-15/63546416.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>wxWidgets学习 - wxStaticText类</title>
-      <link>https://www.zeyes.org/posts/tech/wx-static-text-learn/</link>
+      <link>https://lixize.github.io/posts/tech/wx-static-text-learn/</link>
       <pubDate>Wed, 14 Dec 2016 23:59:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/wx-static-text-learn/</guid>
+      <guid>https://lixize.github.io/posts/tech/wx-static-text-learn/</guid>
       <description>&lt;h2 id=&#34;wxstatictext类&#34;&gt;wxStaticText类&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -62,9 +62,9 @@ wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
     </item>
     <item>
       <title>浅谈const关键字与指针、define、typedef混用</title>
-      <link>https://www.zeyes.org/posts/tech/study-const-define-typedef/</link>
+      <link>https://lixize.github.io/posts/tech/study-const-define-typedef/</link>
       <pubDate>Sat, 08 Feb 2014 15:19:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-const-define-typedef/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-const-define-typedef/</guid>
       <description>&lt;p&gt;下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -84,9 +84,9 @@ wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
     </item>
     <item>
       <title>可变参数的使用</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-stdarg/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-stdarg/</link>
       <pubDate>Thu, 23 Jan 2014 23:55:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-stdarg/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-stdarg/</guid>
       <description>&lt;p&gt;通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。
 例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -101,9 +101,9 @@ wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
     </item>
     <item>
       <title>使用字符串输入</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-scanf/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-scanf/</link>
       <pubDate>Tue, 21 Jan 2014 00:06:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-scanf/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-scanf/</guid>
       <description>&lt;p&gt;scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。&lt;/p&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
