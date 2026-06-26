@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 问道凌虚</title>
-    <link>https://www.zeyes.org/posts/</link>
+    <link>https://lixize.github.io/posts/</link>
     <description>Recent content in Posts on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 07 Jun 2026 01:11:00 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>测试 Notice 样式</title>
-      <link>https://www.zeyes.org/posts/test-shortcode/</link>
+      <link>https://lixize.github.io/posts/test-shortcode/</link>
       <pubDate>Sun, 07 Jun 2026 01:11:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/test-shortcode/</guid>
+      <guid>https://lixize.github.io/posts/test-shortcode/</guid>
       <description>&lt;div class=&#34;notice notice-warning&#34; &gt;
   &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path d=&#34;M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;这是一段 &lt;strong&gt;警告&lt;/strong&gt; 信息。&lt;/p&gt;&lt;/div&gt;
 

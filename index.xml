@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>问道凌虚</title>
-    <link>https://www.zeyes.org/</link>
+    <link>https://lixize.github.io/</link>
     <description>Recent content on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
-    <lastBuildDate>Mon, 08 Jun 2026 00:51:00 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Jun 2026 00:35:00 +0800</lastBuildDate>
+    <atom:link href="https://lixize.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的洛阳钼业割肉复盘：47.86%的亏损，买来四条铁律</title>
+      <link>https://lixize.github.io/posts/stock/20260627-trade-review/</link>
+      <pubDate>Sat, 27 Jun 2026 00:35:00 +0800</pubDate>
+      <guid>https://lixize.github.io/posts/stock/20260627-trade-review/</guid>
+      <description>这是一篇迟到的复盘。2026年6月26日，我卖掉了挣扎了4天的洛阳钼业（603993），确认亏损47.86%</description>
+    </item>
     <item>
       <title>2026年6月8日A股走向预测</title>
-      <link>https://www.zeyes.org/posts/stock/20260608-a-share-review/</link>
+      <link>https://lixize.github.io/posts/stock/20260608-a-share-review/</link>
       <pubDate>Mon, 08 Jun 2026 00:51:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/stock/20260608-a-share-review/</guid>
+      <guid>https://lixize.github.io/posts/stock/20260608-a-share-review/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;阅读提示&lt;/strong&gt;：以下为个人盘前复盘与情景推演，仅作记录和交流，不构成投资建议。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -26,18 +33,18 @@
     </item>
     <item>
       <title>Hugo折腾记</title>
-      <link>https://www.zeyes.org/posts/tech/hugo-papermod-customization/</link>
+      <link>https://lixize.github.io/posts/tech/hugo-papermod-customization/</link>
       <pubDate>Sun, 07 Jun 2026 16:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/hugo-papermod-customization/</guid>
+      <guid>https://lixize.github.io/posts/tech/hugo-papermod-customization/</guid>
       <description>&lt;p&gt;距离上一次写《Hexo折腾记》已经过去很多年了。那时候折腾 Hexo + Next，主要是在装 Node、装插件、改主题配置、解决部署抽风。现在重新整理博客，我换成了 Hugo + PaperMod。&lt;/p&gt;
 &lt;p&gt;这次不想只停留在“能跑起来”。我的目标是：主题保持可更新，文章按技术、股票、随笔分区管理，首页和导航更像自己的站点，搜索、归档、评论、目录、提示框、代码高亮、备案这些功能都补齐，并且尽量把改动放在 Hugo 推荐的覆盖层里，不直接魔改主题源码。&lt;/p&gt;
 &lt;p&gt;这篇就记录一下整个折腾过程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>测试 Notice 样式</title>
-      <link>https://www.zeyes.org/posts/test-shortcode/</link>
+      <link>https://lixize.github.io/posts/test-shortcode/</link>
       <pubDate>Sun, 07 Jun 2026 01:11:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/test-shortcode/</guid>
+      <guid>https://lixize.github.io/posts/test-shortcode/</guid>
       <description>&lt;div class=&#34;notice notice-warning&#34; &gt;
   &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path d=&#34;M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;这是一段 &lt;strong&gt;警告&lt;/strong&gt; 信息。&lt;/p&gt;&lt;/div&gt;
 
@@ -46,24 +53,24 @@
     </item>
     <item>
       <title>PaperMod使用Chroma切换代码高亮明暗主题</title>
-      <link>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</link>
+      <link>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</link>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</guid>
+      <guid>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</guid>
       <description>&lt;p&gt;最近给博客调整代码高亮样式时，遇到一个小问题：使用 Hugo 的 Chroma 高亮，并设置 &lt;code&gt;noClasses: true&lt;/code&gt;、&lt;code&gt;style: &amp;quot;tango&amp;quot;&lt;/code&gt; 后，一些代码块看起来颜色特别浅。尤其是生成出来带有 &lt;code&gt;class=&amp;quot;language-fallback&amp;quot;&lt;/code&gt; 的代码块，浅灰背景配浅灰文字，阅读体验不太好。&lt;/p&gt;
 &lt;p&gt;折腾了一圈后，发现更适合 PaperMod 的方式是：关闭内联样式，使用 Chroma 生成 CSS 类，然后自己准备亮色和暗色两套高亮样式，让它们跟随 PaperMod 的主题切换。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于我</title>
-      <link>https://www.zeyes.org/about/</link>
+      <link>https://lixize.github.io/about/</link>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/about/</guid>
+      <guid>https://lixize.github.io/about/</guid>
       <description>一个写 Java 后端，也爱折腾博客和新工具的人。</description>
     </item>
     <item>
       <title>微信小游戏《萌宠变变变》模拟点击开发</title>
-      <link>https://www.zeyes.org/posts/tech/wx-game-dogbian/</link>
+      <link>https://lixize.github.io/posts/tech/wx-game-dogbian/</link>
       <pubDate>Sat, 05 May 2018 20:43:23 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/wx-game-dogbian/</guid>
+      <guid>https://lixize.github.io/posts/tech/wx-game-dogbian/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;每当在屏幕点击宠物的时候，金钱的方法就会额外增加，同时心跳包会带上点击的宠物ID和点击次数发给服务器。
 所以，可以使用HttpClient来模拟心跳包来实现金钱的额外增长，实际加的很少，但也好过没有。&lt;/p&gt;
@@ -71,26 +78,26 @@
     </item>
     <item>
       <title>Java工具类Observable源码解析与使用</title>
-      <link>https://www.zeyes.org/posts/tech/java-learn-observable/</link>
+      <link>https://lixize.github.io/posts/tech/java-learn-observable/</link>
       <pubDate>Sat, 05 May 2018 14:46:56 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/java-learn-observable/</guid>
+      <guid>https://lixize.github.io/posts/tech/java-learn-observable/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;很多地方，我们需要使用观察者设计模式，而Java内部有提供了这样的一个类。通过继承Observable类和实现Observer接口，就可以省下一些代码，不用我们自己去实现这些代码。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java工具类Timer源码解析与使用</title>
-      <link>https://www.zeyes.org/posts/tech/java-learn-timer/</link>
+      <link>https://lixize.github.io/posts/tech/java-learn-timer/</link>
       <pubDate>Sat, 05 May 2018 01:46:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/java-learn-timer/</guid>
+      <guid>https://lixize.github.io/posts/tech/java-learn-timer/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;通常我们需要定时执行一些任务，这时候可以使用Timer来完成，准确来说是Timer和TimerTask两个类配合完成。Timer是一个工具类，而TimerTask是一个抽象类，实现了Runnable接口。通过继承TimerTask可以定制我们自己的任务，并将我们自己的TimerTask加入Timer中。
 Timer内部会调用TimerTask的run方法来执行业务流程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hexo折腾记</title>
-      <link>https://www.zeyes.org/posts/tech/install-hexo-and-next/</link>
+      <link>https://lixize.github.io/posts/tech/install-hexo-and-next/</link>
       <pubDate>Mon, 30 Apr 2018 18:54:13 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/install-hexo-and-next/</guid>
+      <guid>https://lixize.github.io/posts/tech/install-hexo-and-next/</guid>
       <description>&lt;h2 id=&#34;hexo折腾过程&#34;&gt;Hexo折腾过程&lt;/h2&gt;
 &lt;h3 id=&#34;01安装git&#34;&gt;01#安装git&lt;/h3&gt;
 &lt;p&gt;下载地址：&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
@@ -160,26 +167,26 @@ Timer内部会调用TimerTask的run方法来执行业务流程。&lt;/p&gt;</des
     </item>
     <item>
       <title>解决用Eclipse EE写JSP代码时，自动括号补全问题</title>
-      <link>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</link>
+      <link>https://lixize.github.io/posts/tech/study-eclipse-jsp-auto-close/</link>
       <pubDate>Sat, 18 Nov 2017 14:43:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-eclipse-jsp-auto-close/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-eclipse-jsp-auto-close/</guid>
       <description>&lt;p&gt;这个问题其实是烦恼了挺久的，就我本人而言，通常不用括号补全，我觉得手打比较完整，在学JSP以前，用Eclipse虽然他带括号补全，但是也不影响手打，比如打括号时，不会出现三个括号。
 而JSP的Editor就比较烦人了。比如打&amp;lt;%%&amp;gt;会出现&amp;lt;%%&amp;raquo;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>D客户端(中兴802.1X) For OpenWrt</title>
-      <link>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</link>
+      <link>https://lixize.github.io/posts/tech/dclient-for-openwrt/</link>
       <pubDate>Sun, 01 Oct 2017 11:59:58 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/dclient-for-openwrt/</guid>
+      <guid>https://lixize.github.io/posts/tech/dclient-for-openwrt/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;学校用的是中兴802.1X认证，只有通过认证的客户端才能上内网和外网。外网登录天翼校园网才能上网。而官方的中兴802.1X客户端，只能运行在Window平台上，并且不能共享WIFI。因此下决心开发了个OpenWrt版的中兴802.1X客户端，这个客户端不同的是专门为我校写的，所以还带了登录天翼校园网的功能。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>Ubuntu 16.04 菜单栏消失的解决办法</title>
-      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</link>
+      <link>https://lixize.github.io/posts/tech/solve-ubuntu-menu-item-disappered/</link>
       <pubDate>Sun, 17 Sep 2017 09:33:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-menu-item-disappered/</guid>
+      <guid>https://lixize.github.io/posts/tech/solve-ubuntu-menu-item-disappered/</guid>
       <description>&lt;p&gt;今天无缘无故，ubuntu的菜单栏就消失了。找了以下终于找到了解决办法。&lt;/p&gt;
 &lt;p&gt;打开命令行窗口，输入以下语句：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -196,9 +203,9 @@ Timer内部会调用TimerTask的run方法来执行业务流程。&lt;/p&gt;</des
     </item>
     <item>
       <title>ubuntu中Codeblock运行中文乱码解决方法</title>
-      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</link>
+      <link>https://lixize.github.io/posts/tech/solve-ubuntu-codeblocks-charset/</link>
       <pubDate>Sat, 16 Sep 2017 19:09:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-codeblocks-charset/</guid>
+      <guid>https://lixize.github.io/posts/tech/solve-ubuntu-codeblocks-charset/</guid>
       <description>&lt;h3 id=&#34;中文乱码解决方案&#34;&gt;中文乱码解决方案&lt;/h3&gt;
 &lt;p&gt;“设置”菜单下选“环境设置”：&lt;/p&gt;
 &lt;p&gt;“常规设置”，最下面&amp;quot;启动控制台程序的终端”，选择gnome-terminal -t $TITLE -x
@@ -206,9 +213,9 @@ Timer内部会调用TimerTask的run方法来执行业务流程。&lt;/p&gt;</des
     </item>
     <item>
       <title>解决Ubuntu“下载额外数据文件失败 ttf-mscorefonts-installer”的问题</title>
-      <link>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</link>
+      <link>https://lixize.github.io/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</link>
       <pubDate>Fri, 15 Sep 2017 13:37:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</guid>
+      <guid>https://lixize.github.io/posts/tech/solve-ubuntu-download-ttf-mscorefonts-installer-failed/</guid>
       <description>&lt;p&gt;最近开机总是遇到一段提示，内容大概是这样：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;下载额外数据文件失败
@@ -218,22 +225,22 @@ ttf-mscorefonts-installer
     </item>
     <item>
       <title>Eclipse Neon配置Mysql</title>
-      <link>https://www.zeyes.org/posts/tech/eclipse-mysql/</link>
+      <link>https://lixize.github.io/posts/tech/eclipse-mysql/</link>
       <pubDate>Thu, 15 Jun 2017 16:13:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/eclipse-mysql/</guid>
+      <guid>https://lixize.github.io/posts/tech/eclipse-mysql/</guid>
       <description>&lt;h3 id=&#34;1-要下载的资料&#34;&gt;1# 要下载的资料&lt;/h3&gt;
 &lt;p&gt;MySQL Connector/J 6.0
 下载网址：&lt;a href=&#34;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&#34;&gt;https://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-6.0.6.zip&lt;/a&gt;
 查看最新版本下载链接：&lt;a href=&#34;https://dev.mysql.com/downloads/connector/j/&#34;&gt;https://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-解压文件&#34;&gt;2# 解压文件&lt;/h3&gt;
 &lt;p&gt;解压mysql-connector-java-6.0.6.zip，可得如下文件：
-&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-06-15/63546416.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img loading=&#34;lazy&#34; src=&#34;https://lixize.github.io/assets/tech/2017-06-15/63546416.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>CodeBlocks 16.01&#43;wxWidgets 3.03配置</title>
-      <link>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</link>
+      <link>https://lixize.github.io/posts/tech/configured-codeblocks-wxwidgets-303/</link>
       <pubDate>Wed, 07 Jun 2017 01:35:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
+      <guid>https://lixize.github.io/posts/tech/configured-codeblocks-wxwidgets-303/</guid>
       <description>&lt;h3 id=&#34;1-下载codeblocks-1601和wxwidgets-303&#34;&gt;1# 下载CodeBlocks 16.01和wxWidgets 3.0.3&lt;/h3&gt;
 &lt;p&gt;CodeBlocks 16.01 下载地址：&lt;a href=&#34;http://www.codeblocks.org/downloads/&#34;&gt;http://www.codeblocks.org/downloads/&lt;/a&gt;
 wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/downloads/&#34;&gt;https://www.wxwidgets.org/downloads/&lt;/a&gt;&lt;/p&gt;
@@ -241,9 +248,9 @@ wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/download
     </item>
     <item>
       <title>Ubuntu 14.04/16.04 开启root用户登录/自动开启小键盘</title>
-      <link>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</link>
+      <link>https://lixize.github.io/posts/tech/study-ubuntu-login-settings/</link>
       <pubDate>Sun, 04 Jun 2017 12:06:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-ubuntu-login-settings/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-ubuntu-login-settings/</guid>
       <description>&lt;h3 id=&#34;1-给root用户设置密码&#34;&gt;1# 给root用户设置密码&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -270,12 +277,12 @@ wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/download
     </item>
     <item>
       <title>使用OpenVPN对校园网内网穿透</title>
-      <link>https://www.zeyes.org/posts/tech/openvpn-nat/</link>
+      <link>https://lixize.github.io/posts/tech/openvpn-nat/</link>
       <pubDate>Sat, 22 Apr 2017 21:54:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/openvpn-nat/</guid>
+      <guid>https://lixize.github.io/posts/tech/openvpn-nat/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;目标： 搭建完成之后，可以在服务器(外网)上直接输入校园网(内网)地址进行访问。
-&lt;img loading=&#34;lazy&#34; src=&#34;https://www.zeyes.org/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://lixize.github.io/assets/tech/2017-04-22/OpenVPN.png&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;00-前言&#34;&gt;#00 前言&lt;/h3&gt;
 &lt;p&gt;最近对穿透学校的内网有需求，于是决定搭建环境。
@@ -284,9 +291,9 @@ wxWidgets 3.03 下载地址：&lt;a href=&#34;https://www.wxwidgets.org/download
     </item>
     <item>
       <title>wxWidgets学习 - wxStaticText类</title>
-      <link>https://www.zeyes.org/posts/tech/wx-static-text-learn/</link>
+      <link>https://lixize.github.io/posts/tech/wx-static-text-learn/</link>
       <pubDate>Wed, 14 Dec 2016 23:59:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/wx-static-text-learn/</guid>
+      <guid>https://lixize.github.io/posts/tech/wx-static-text-learn/</guid>
       <description>&lt;h2 id=&#34;wxstatictext类&#34;&gt;wxStaticText类&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -315,18 +322,18 @@ wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
     </item>
     <item>
       <title>Ubuntu 16.04 安装CodeBlocks</title>
-      <link>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</link>
+      <link>https://lixize.github.io/posts/tech/ubuntu-16-04-codeblocks/</link>
       <pubDate>Fri, 14 Oct 2016 23:46:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/ubuntu-16-04-codeblocks/</guid>
+      <guid>https://lixize.github.io/posts/tech/ubuntu-16-04-codeblocks/</guid>
       <description>&lt;p&gt;CodeBlocks在Ubuntu 14.04下会出现与原生的ibus有冲突，解决的办法很简单，装fcitx就行了。安装完之后记得装拼音输入法，这个很重要。&lt;/p&gt;
 &lt;p&gt;在Ubuntu 16.04下就比较简单了。&lt;/p&gt;
 </description>
     </item>
     <item>
       <title>献给世界</title>
-      <link>https://www.zeyes.org/posts/essay/before-college/</link>
+      <link>https://lixize.github.io/posts/essay/before-college/</link>
       <pubDate>Sat, 05 Sep 2015 00:29:12 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/essay/before-college/</guid>
+      <guid>https://lixize.github.io/posts/essay/before-college/</guid>
       <description>&lt;p&gt;一入编程深似海，真系坑爹。&lt;/p&gt;
 &lt;p&gt;高考完了，爽吧。确实爽，有接近三个月的暑假。高中三年，无数次幻想这个暑假，充斥着自由、疯狂与青春。也做过无数计划。但最终，赶不上变化。&lt;/p&gt;
 &lt;p&gt;假期一有空就疯狂地写代码，写累了就睡觉，醒来又写，C++果然是学不完的语言。&lt;/p&gt;
@@ -334,9 +341,9 @@ wxStaticText控件支持三种典型的文本对齐。&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1004 Let the Balloon Rise</title>
-      <link>https://www.zeyes.org/posts/tech/hdu-1004/</link>
+      <link>https://lixize.github.io/posts/tech/hdu-1004/</link>
       <pubDate>Mon, 06 Jul 2015 20:50:19 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/hdu-1004/</guid>
+      <guid>https://lixize.github.io/posts/tech/hdu-1004/</guid>
       <description>&lt;h2 id=&#34;let-the-balloon-rise&#34;&gt;Let the Balloon Rise&lt;/h2&gt;
 &lt;p&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
@@ -346,9 +353,9 @@ Total Submission(s): 87994 Accepted Submission(s): 33308&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1003 Max Sum</title>
-      <link>https://www.zeyes.org/posts/tech/hdu-1003/</link>
+      <link>https://lixize.github.io/posts/tech/hdu-1003/</link>
       <pubDate>Sun, 05 Jul 2015 20:45:38 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/hdu-1003/</guid>
+      <guid>https://lixize.github.io/posts/tech/hdu-1003/</guid>
       <description>&lt;h2 id=&#34;max-sum&#34;&gt;Max Sum&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
@@ -359,9 +366,9 @@ Total Submission(s): 173855 Accepted Submission(s): 40493&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>HDU 1002 A &#43; B Problem II</title>
-      <link>https://www.zeyes.org/posts/tech/hdu-1002/</link>
+      <link>https://lixize.github.io/posts/tech/hdu-1002/</link>
       <pubDate>Sat, 04 Jul 2015 20:39:18 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/hdu-1002/</guid>
+      <guid>https://lixize.github.io/posts/tech/hdu-1002/</guid>
       <description>&lt;h2 id=&#34;a--b-problem-ii&#34;&gt;A + B Problem II&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 2000/1000 MS (Java/Others) Memory Limit: 65536/32768 K (Java/Others)
 Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
@@ -372,9 +379,9 @@ Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>归并排序(Merge Sort)</title>
-      <link>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</link>
+      <link>https://lixize.github.io/posts/tech/c-merge-sort-learn/</link>
       <pubDate>Wed, 24 Jun 2015 20:33:32 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/c-merge-sort-learn/</guid>
+      <guid>https://lixize.github.io/posts/tech/c-merge-sort-learn/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;归并排序&lt;/strong&gt;是稳定排序的一种，之所以说它稳定是因为，两个相等的数排序之后不会调换位置。（&lt;em&gt;当然这个是比较业余的说法，如果想得到准确答案，问度娘。&lt;/em&gt;）归并排序的时间复杂度为&lt;strong&gt;O(nlgn)&lt;/strong&gt;，同时归并排序做较少改动就可以求逆序对，只需改动最后一个for循环就可以。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -391,9 +398,9 @@ Total Submission(s): 257918 Accepted Submission(s): 49865&lt;/em&gt;&lt;/p&gt;
     </item>
     <item>
       <title>POJ 1804 Brainman</title>
-      <link>https://www.zeyes.org/posts/tech/poj-1804/</link>
+      <link>https://lixize.github.io/posts/tech/poj-1804/</link>
       <pubDate>Tue, 23 Jun 2015 20:11:42 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/poj-1804/</guid>
+      <guid>https://lixize.github.io/posts/tech/poj-1804/</guid>
       <description>&lt;h1 id=&#34;brainman&#34;&gt;Brainman&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;Time Limit: 1000MS Memory Limit: 30000K
 Total Submissions: 8755 Accepted: 4723&lt;/em&gt;&lt;/p&gt;
@@ -415,31 +422,31 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>选择排序（Selection Sort）</title>
-      <link>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</link>
+      <link>https://lixize.github.io/posts/tech/c-selection-sort-learn/</link>
       <pubDate>Sun, 21 Jun 2015 20:03:48 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/c-selection-sort-learn/</guid>
+      <guid>https://lixize.github.io/posts/tech/c-selection-sort-learn/</guid>
       <description>&lt;strong&gt;选择排序&lt;/strong&gt;是经典排序的一种，最差的时间复杂度为&lt;strong&gt;O(n^2&lt;/strong&gt;)，它的主要原理是直接从待排序数组里选择一个最小(或最大)的数字,每次都拿一个最小数字出来，顺序放入新数组,直到全部拿完。</description>
     </item>
     <item>
       <title>插入排序的C语言实现</title>
-      <link>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</link>
+      <link>https://lixize.github.io/posts/tech/c-insert-sort-learn/</link>
       <pubDate>Sat, 20 Jun 2015 15:08:08 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/c-insert-sort-learn/</guid>
+      <guid>https://lixize.github.io/posts/tech/c-insert-sort-learn/</guid>
       <description>&lt;strong&gt;插入排序&lt;/strong&gt;，稳定排序的一种,&lt;strong&gt;平均时间复杂度为O(n^2)&lt;/strong&gt;,它的代码量很小，对于处理小数据的排序还是可以的。
 排序扑克牌可以形象地描述插入排序（贴近生活），算法导论就是用它来引入主题的。</description>
     </item>
     <item>
       <title>Kruskal算法的C语言实现（并查集版）</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-kruskal/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-kruskal/</link>
       <pubDate>Sun, 23 Feb 2014 00:07:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-kruskal/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-kruskal/</guid>
       <description>Kruskal算法求加权连通图的最小生成树的算法。kruskal算法总共选择n- 1条边，所使用的贪婪准则是：从剩下的边中选择一条不会产生环路的具有最小耗费的边加入已选择的边的集合中。注意到所选取的边若产生环路则不可能形成一棵生成树。kruskal算法分e 步，其中e 是网络中边的数目。按耗费递增的顺序来考虑这e 条边，每次考虑一条边。当考虑某条边时，若将其加入到已选边的集合中会出现环路，则将其抛弃，否则，将它选入。</description>
     </item>
     <item>
       <title>浅谈const关键字与指针、define、typedef混用</title>
-      <link>https://www.zeyes.org/posts/tech/study-const-define-typedef/</link>
+      <link>https://lixize.github.io/posts/tech/study-const-define-typedef/</link>
       <pubDate>Sat, 08 Feb 2014 15:19:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-const-define-typedef/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-const-define-typedef/</guid>
       <description>&lt;p&gt;下面有四条声明，const修饰的到底是哪个？是a是常量还是*a是常量？由于只是关键字调换下顺序，是非常容易搞混的。我来详细说下。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -459,33 +466,33 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>Prim算法的C语言实现</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-prim/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-prim/</link>
       <pubDate>Sat, 01 Feb 2014 14:54:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-prim/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-prim/</guid>
       <description>普里姆算法（Prim算法），图论中的一种算法，可在加权连通图里搜索最小生成树。意即由此算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</description>
     </item>
     <item>
       <title>[转载]数组名与指针</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-array/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-array/</link>
       <pubDate>Tue, 28 Jan 2014 21:24:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-array/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-array/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;指针是C/C++语言的特色，而数组名与指针有太多的相似，甚至很多时候，数组名可以作为指针使用。于是乎，很多程序猿就被搞糊涂了，错误地认为“数组名就是指针”。
 想必这种误解的根源在于国内某著名的C程序设计教程。如果这篇文章能够纠正许多中国程序员对数组名和指针的误解，笔者就不甚欣慰了。借此文，笔者站在无数对知识如饥似渴的中国程序员之中，深深寄希望于国内的计算机图书编写者们，能以&amp;quot;深入探索&amp;quot;的思维方式和精益求精的认真态度来对待图书编写工作，但愿市面上多些融入作者思考结晶的心血之作！&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dijkstra算法的C语言实现</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-dijkstra/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-dijkstra/</link>
       <pubDate>Sun, 26 Jan 2014 17:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-dijkstra/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-dijkstra/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Dijkstra算法可用于计算正权图的单源最短路（Single-Source Shortest Paths，SSSP），即从单个源点出发，到所有节点的最短路。该算法同时适用于有向图和无向图。&lt;/p&gt;</description>
     </item>
     <item>
       <title>可变参数的使用</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-stdarg/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-stdarg/</link>
       <pubDate>Thu, 23 Jan 2014 23:55:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-stdarg/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-stdarg/</guid>
       <description>&lt;p&gt;通常情况下，我们一个函数的参数个数是固定的，传多了会报错，少了有时也可能报错。
 例如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -500,9 +507,9 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用字符串输入</title>
-      <link>https://www.zeyes.org/posts/tech/study-c-scanf/</link>
+      <link>https://lixize.github.io/posts/tech/study-c-scanf/</link>
       <pubDate>Tue, 21 Jan 2014 00:06:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/study-c-scanf/</guid>
+      <guid>https://lixize.github.io/posts/tech/study-c-scanf/</guid>
       <description>&lt;p&gt;scanf()开始读取后,会在遇到的第一个空白字符空格（blank）、制表符（Tab）或者换行符(newline)处停止读取。&lt;/p&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -533,9 +540,9 @@ swap (8 3) 0 2 3 8&lt;/p&gt;</description>
     </item>
     <item>
       <title>【2014端午纪念版】抽签系统3.25-Final</title>
-      <link>https://www.zeyes.org/posts/tech/e-random-number-system/</link>
+      <link>https://lixize.github.io/posts/tech/e-random-number-system/</link>
       <pubDate>Mon, 20 Jan 2014 13:50:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/e-random-number-system/</guid>
+      <guid>https://lixize.github.io/posts/tech/e-random-number-system/</guid>
       <description>“2014端午纪念版”抽签系统3.25最终版，是一款面向学生课堂用的趣味抽签应用。</description>
     </item>
   </channel>

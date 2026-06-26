@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>皮一下 on 问道凌虚</title>
-    <link>https://www.zeyes.org/tags/%E7%9A%AE%E4%B8%80%E4%B8%8B/</link>
+    <link>https://lixize.github.io/tags/%E7%9A%AE%E4%B8%80%E4%B8%8B/</link>
     <description>Recent content in 皮一下 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sat, 05 May 2018 20:43:23 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/tags/%E7%9A%AE%E4%B8%80%E4%B8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/tags/%E7%9A%AE%E4%B8%80%E4%B8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微信小游戏《萌宠变变变》模拟点击开发</title>
-      <link>https://www.zeyes.org/posts/tech/wx-game-dogbian/</link>
+      <link>https://lixize.github.io/posts/tech/wx-game-dogbian/</link>
       <pubDate>Sat, 05 May 2018 20:43:23 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/wx-game-dogbian/</guid>
+      <guid>https://lixize.github.io/posts/tech/wx-game-dogbian/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;每当在屏幕点击宠物的时候，金钱的方法就会额外增加，同时心跳包会带上点击的宠物ID和点击次数发给服务器。
 所以，可以使用HttpClient来模拟心跳包来实现金钱的额外增长，实际加的很少，但也好过没有。&lt;/p&gt;

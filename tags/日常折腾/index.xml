@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>日常折腾 on 问道凌虚</title>
-    <link>https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/</link>
+    <link>https://lixize.github.io/tags/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/</link>
     <description>Recent content in 日常折腾 on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 07 Jun 2026 18:00:00 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/tags/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/tags/%E6%97%A5%E5%B8%B8%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo折腾记</title>
-      <link>https://www.zeyes.org/posts/tech/hugo-papermod-customization/</link>
+      <link>https://lixize.github.io/posts/tech/hugo-papermod-customization/</link>
       <pubDate>Sun, 07 Jun 2026 16:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/hugo-papermod-customization/</guid>
+      <guid>https://lixize.github.io/posts/tech/hugo-papermod-customization/</guid>
       <description>&lt;p&gt;距离上一次写《Hexo折腾记》已经过去很多年了。那时候折腾 Hexo + Next，主要是在装 Node、装插件、改主题配置、解决部署抽风。现在重新整理博客，我换成了 Hugo + PaperMod。&lt;/p&gt;
 &lt;p&gt;这次不想只停留在“能跑起来”。我的目标是：主题保持可更新，文章按技术、股票、随笔分区管理，首页和导航更像自己的站点，搜索、归档、评论、目录、提示框、代码高亮、备案这些功能都补齐，并且尽量把改动放在 Hugo 推荐的覆盖层里，不直接魔改主题源码。&lt;/p&gt;
 &lt;p&gt;这篇就记录一下整个折腾过程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hexo折腾记</title>
-      <link>https://www.zeyes.org/posts/tech/install-hexo-and-next/</link>
+      <link>https://lixize.github.io/posts/tech/install-hexo-and-next/</link>
       <pubDate>Mon, 30 Apr 2018 18:54:13 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/install-hexo-and-next/</guid>
+      <guid>https://lixize.github.io/posts/tech/install-hexo-and-next/</guid>
       <description>&lt;h2 id=&#34;hexo折腾过程&#34;&gt;Hexo折腾过程&lt;/h2&gt;
 &lt;h3 id=&#34;01安装git&#34;&gt;01#安装git&lt;/h3&gt;
 &lt;p&gt;下载地址：&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Chroma on 问道凌虚</title>
-    <link>https://www.zeyes.org/tags/chroma/</link>
+    <link>https://lixize.github.io/tags/chroma/</link>
     <description>Recent content in Chroma on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 07 Jun 2026 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/tags/chroma/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/tags/chroma/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PaperMod使用Chroma切换代码高亮明暗主题</title>
-      <link>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</link>
+      <link>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</link>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</guid>
+      <guid>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</guid>
       <description>&lt;p&gt;最近给博客调整代码高亮样式时，遇到一个小问题：使用 Hugo 的 Chroma 高亮，并设置 &lt;code&gt;noClasses: true&lt;/code&gt;、&lt;code&gt;style: &amp;quot;tango&amp;quot;&lt;/code&gt; 后，一些代码块看起来颜色特别浅。尤其是生成出来带有 &lt;code&gt;class=&amp;quot;language-fallback&amp;quot;&lt;/code&gt; 的代码块，浅灰背景配浅灰文字，阅读体验不太好。&lt;/p&gt;
 &lt;p&gt;折腾了一圈后，发现更适合 PaperMod 的方式是：关闭内联样式，使用 Chroma 生成 CSS 类，然后自己准备亮色和暗色两套高亮样式，让它们跟随 PaperMod 的主题切换。&lt;/p&gt;</description>
     </item>

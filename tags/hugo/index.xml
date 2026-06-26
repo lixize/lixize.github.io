@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hugo on 问道凌虚</title>
-    <link>https://www.zeyes.org/tags/hugo/</link>
+    <link>https://lixize.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Sun, 07 Jun 2026 18:00:00 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo折腾记</title>
-      <link>https://www.zeyes.org/posts/tech/hugo-papermod-customization/</link>
+      <link>https://lixize.github.io/posts/tech/hugo-papermod-customization/</link>
       <pubDate>Sun, 07 Jun 2026 16:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/hugo-papermod-customization/</guid>
+      <guid>https://lixize.github.io/posts/tech/hugo-papermod-customization/</guid>
       <description>&lt;p&gt;距离上一次写《Hexo折腾记》已经过去很多年了。那时候折腾 Hexo + Next，主要是在装 Node、装插件、改主题配置、解决部署抽风。现在重新整理博客，我换成了 Hugo + PaperMod。&lt;/p&gt;
 &lt;p&gt;这次不想只停留在“能跑起来”。我的目标是：主题保持可更新，文章按技术、股票、随笔分区管理，首页和导航更像自己的站点，搜索、归档、评论、目录、提示框、代码高亮、备案这些功能都补齐，并且尽量把改动放在 Hugo 推荐的覆盖层里，不直接魔改主题源码。&lt;/p&gt;
 &lt;p&gt;这篇就记录一下整个折腾过程。&lt;/p&gt;</description>
     </item>
     <item>
       <title>PaperMod使用Chroma切换代码高亮明暗主题</title>
-      <link>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</link>
+      <link>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</link>
       <pubDate>Sun, 07 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/papermod-chroma-light-dark-syntax/</guid>
+      <guid>https://lixize.github.io/posts/tech/papermod-chroma-light-dark-syntax/</guid>
       <description>&lt;p&gt;最近给博客调整代码高亮样式时，遇到一个小问题：使用 Hugo 的 Chroma 高亮，并设置 &lt;code&gt;noClasses: true&lt;/code&gt;、&lt;code&gt;style: &amp;quot;tango&amp;quot;&lt;/code&gt; 后，一些代码块看起来颜色特别浅。尤其是生成出来带有 &lt;code&gt;class=&amp;quot;language-fallback&amp;quot;&lt;/code&gt; 的代码块，浅灰背景配浅灰文字，阅读体验不太好。&lt;/p&gt;
 &lt;p&gt;折腾了一圈后，发现更适合 PaperMod 的方式是：关闭内联样式，使用 Chroma 生成 CSS 类，然后自己准备亮色和暗色两套高亮样式，让它们跟随 PaperMod 的主题切换。&lt;/p&gt;</description>
     </item>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hexo on 问道凌虚</title>
-    <link>https://www.zeyes.org/tags/hexo/</link>
+    <link>https://lixize.github.io/tags/hexo/</link>
     <description>Recent content in Hexo on 问道凌虚</description>
     <generator>Hugo</generator>
     <language>zh-Hans-CN</language>
     <lastBuildDate>Mon, 30 Apr 2018 18:54:13 +0800</lastBuildDate>
-    <atom:link href="https://www.zeyes.org/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lixize.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hexo折腾记</title>
-      <link>https://www.zeyes.org/posts/tech/install-hexo-and-next/</link>
+      <link>https://lixize.github.io/posts/tech/install-hexo-and-next/</link>
       <pubDate>Mon, 30 Apr 2018 18:54:13 +0800</pubDate>
-      <guid>https://www.zeyes.org/posts/tech/install-hexo-and-next/</guid>
+      <guid>https://lixize.github.io/posts/tech/install-hexo-and-next/</guid>
       <description>&lt;h2 id=&#34;hexo折腾过程&#34;&gt;Hexo折腾过程&lt;/h2&gt;
 &lt;h3 id=&#34;01安装git&#34;&gt;01#安装git&lt;/h3&gt;
 &lt;p&gt;下载地址：&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;https://git-scm.com/downloads&lt;/a&gt;&lt;/p&gt;
